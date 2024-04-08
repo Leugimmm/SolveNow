@@ -1,4 +1,4 @@
 package group.demo.Controller;
 
-public class dasdas {
+public class IndexController {
 }
