@@ -15,7 +15,7 @@ public class UsuariosDTO implements Serializable {
     private String foto;
     private String descripcion;
     private String email;
-    private String contraseña;
+    private String password;
     private int id_Autonoma;
     private int id_Localidad;
 
@@ -27,7 +27,7 @@ public class UsuariosDTO implements Serializable {
         entity.setFoto(dto.getFoto());
         entity.setDescripcion(dto.getDescripcion());
         entity.setEmail(dto.getEmail());
-        entity.setContraseña(dto.getContraseña());
+        entity.setPassword(dto.getPassword());
         entity.setId_Autonoma(dto.getId_Autonoma());
         entity.setId_Localidad(dto.getId_Localidad());
         return entity;
@@ -40,7 +40,7 @@ public class UsuariosDTO implements Serializable {
         dto.setFoto(entity.getFoto());
         dto.setDescripcion(entity.getDescripcion());
         dto.setEmail(entity.getEmail());
-        dto.setContraseña(entity.getContraseña());
+        dto.setPassword(entity.getPassword());
         dto.setId_Autonoma(entity.getId_Autonoma());
         dto.setId_Localidad(entity.getId_Localidad());
         return dto;

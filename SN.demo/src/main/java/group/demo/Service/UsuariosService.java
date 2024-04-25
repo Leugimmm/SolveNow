@@ -8,4 +8,5 @@ public interface UsuariosService {
     List<UsuariosDTO> findAll();
     UsuariosDTO findById(UsuariosDTO usuariosDTO);
     void save(UsuariosDTO usuariosDTO);
+    UsuariosDTO findUsuario( String correo ,  String password);
 }

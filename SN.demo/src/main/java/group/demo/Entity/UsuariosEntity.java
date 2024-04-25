@@ -28,7 +28,7 @@ public class UsuariosEntity {
     private String email;
     @Basic
     @Column(name = "CONTRASEÑA", nullable = true, length = 30)
-    private String contraseña;
+    private String password;
     @Basic
     @Column(name = "ID_AUTONOMA", nullable = true, length = 30)
     private int id_Autonoma;
