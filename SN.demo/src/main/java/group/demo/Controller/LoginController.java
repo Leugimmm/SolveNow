@@ -3,9 +3,11 @@ package group.demo.Controller;
 import group.demo.DTO.UsuariosDTO;
 import group.demo.Service.UsuariosService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 @RestController
 public class LoginController {
@@ -13,6 +15,12 @@ public class LoginController {
     @Autowired
     private UsuariosService usuariosService;
 
+    @GetMapping("/login")
+    public ModelAndView IniciarSesion(){
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("./inicio-sesion.html");
+        return mav;
+    }
 
     @PostMapping("/api/iniciosesion")
     public boolean comprobarUsuario (@RequestBody UsuariosDTO usuariosDTO){
@@ -30,6 +38,6 @@ public class LoginController {
 
     @PostMapping("/api/obtenerusuario")
     public UsuariosDTO obtenerusuario (@RequestBody UsuariosDTO usuariosDTO){
-        return usuariosService.findUsuario(usuariosDTO.getNombre(), usuariosDTO.getPassword());
+        return usuariosService.findUsuario(usuariosDTO.getEmail(), usuariosDTO.getPassword());
     }
 }

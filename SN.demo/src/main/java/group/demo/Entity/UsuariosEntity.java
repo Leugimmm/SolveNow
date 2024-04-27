@@ -33,6 +33,6 @@ public class UsuariosEntity {
     @Column(name = "ID_AUTONOMA", nullable = true, length = 30)
     private int id_Autonoma;
     @Basic
-    @Column(name = "ID_LOCAILDAD", nullable = true, length = 30)
+    @Column(name = "ID_LOCALIDAD", nullable = true, length = 30)
     private int id_Localidad;
 }
