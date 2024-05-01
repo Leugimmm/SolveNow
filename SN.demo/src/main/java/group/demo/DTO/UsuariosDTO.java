@@ -16,8 +16,8 @@ public class UsuariosDTO implements Serializable {
     private String descripcion;
     private String email;
     private String password;
-    private int id_Autonoma;
-    private int id_Localidad;
+    private Integer id_Autonoma;
+    private Integer id_Localidad;
 
     public static UsuariosEntity ConvertToEntity(UsuariosDTO dto){
         UsuariosEntity entity = new UsuariosEntity();

@@ -5,9 +5,11 @@ import group.demo.Service.UsuariosService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 @RestController
 public class RegistroController {
@@ -16,6 +18,12 @@ public class RegistroController {
             LoggerFactory.getLogger(RegistroController.class);
     @Autowired
     private UsuariosService usuariosService;
+    @GetMapping("/regi")
+    public ModelAndView IniciarSesion(){
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("./regitro.html");
+        return mav;
+    }
     @PostMapping("/api/registro")
     public boolean comprobarUsuario (@RequestBody UsuariosDTO usuariosDTO){
         log.info(String.valueOf(usuariosDTO));
@@ -32,6 +40,9 @@ public class RegistroController {
             return false;
         }
         usuariosDTO.setRol("Usuario");
+        usuariosDTO.setId_Autonoma(null);
+        usuariosDTO.setId_Localidad(null);
+
         usuariosService.save(usuariosDTO);
         return true;
     }

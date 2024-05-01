@@ -31,8 +31,8 @@ public class UsuariosEntity {
     private String password;
     @Basic
     @Column(name = "ID_AUTONOMA", nullable = true, length = 30)
-    private int id_Autonoma;
+    private Integer id_Autonoma;
     @Basic
     @Column(name = "ID_LOCALIDAD", nullable = true, length = 30)
-    private int id_Localidad;
+    private Integer id_Localidad;
 }
