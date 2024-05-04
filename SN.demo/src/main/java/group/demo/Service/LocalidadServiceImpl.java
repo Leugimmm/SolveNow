@@ -37,4 +37,5 @@ public class LocalidadServiceImpl implements LocalidadService {
     public LocalidadDTO findById(LocalidadDTO localidadDTO) {
         return null;
     }
+
 }
