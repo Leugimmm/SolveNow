@@ -5,8 +5,10 @@ import group.demo.Service.PostService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -17,13 +19,13 @@ public class IndexController {
             LoggerFactory.getLogger(IndexController.class);
     @Autowired
     private PostService postService;
-    @RequestMapping("/api/todosPost")
-    public List<PostDTO> findAll() {
 
-        log.info("ClienteRestController - findAll: Mostramos todos los clientes");
-
-        List<PostDTO> listaPostDTO = postService.findAll();
-        return listaPostDTO;
+    @GetMapping("/")
+    public ModelAndView IniciarSesion(){
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("./index.html");
+        return mav;
     }
+
 
 }
