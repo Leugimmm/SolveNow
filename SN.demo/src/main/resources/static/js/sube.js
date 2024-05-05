@@ -1,3 +1,4 @@
+
 window.addEventListener("load", function (event) {
     let url = 'http://localhost:8888/api/auto'
     let url2= 'http://localhost:8888/api/loca'
@@ -386,8 +387,11 @@ formu.addEventListener('submit', e => {
                                     console.log(cal);
                                     console.log(local);
                                     console.log(comuna);
+                                      const fileInput = document.getElementById('foto');
+                                     const file = fileInput.files[0];
+                                     console.log(file.name);
 
-                                    let  data2 = { "id_Calle": cal, "id_problema": pro,"descripcion":descripcion.value };
+                                    let  data2 = { "id_Calle": cal, "id_problema": pro,"descripcion":descripcion.value,"foto":file.name};
                                      fetch(url5, {
                                             method: "POST",
                                             headers: {
@@ -400,8 +404,7 @@ formu.addEventListener('submit', e => {
 
                                             console.log(data);
 
-                                            const fileInput = document.getElementById('foto');
-                                            const file = fileInput.files[0];
+
 
                                             // Crear un objeto FormData y agregar el archivo
                                             const formData = new FormData();
@@ -414,6 +417,17 @@ formu.addEventListener('submit', e => {
                                             .then(response => response.text())
                                             .then(data => {
                                                 console.log(data);
+
+
+                                                Swal.fire({
+                                                  title: 'Post enviado',
+                                                  icon: 'success',
+                                                  showConfirmButton: false,
+                                                  timer: 2000 // Muestra el mensaje durante 2 segundos
+                                                }).then(() => {
+                                                  // Redirige a la URL después de que termine el tiempo
+                                                  window.location.href = 'http://localhost:8888'; // Reemplaza 'URL_DEL_SITIO' con la URL a la que deseas redirigir
+                                                });
                                             })
 
                                             }
