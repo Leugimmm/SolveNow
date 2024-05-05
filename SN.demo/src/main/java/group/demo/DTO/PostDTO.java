@@ -8,7 +8,7 @@ import lombok.Data;
 public class PostDTO {
 
     private int id;
-    private int id_Usuario;
+    private Integer id_Usuario;
     private int id_Calle;
     private int id_problema;
     private String descripcion;

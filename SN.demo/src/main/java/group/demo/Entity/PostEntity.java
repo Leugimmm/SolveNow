@@ -13,7 +13,7 @@ public class PostEntity {
     private int id;
     @Basic
     @Column(name = "ID_USUARIO", nullable = true, length = 30)
-    private int id_Usuario;
+    private Integer id_Usuario;
     @Basic
     @Column(name = "ID_CALLE", nullable = true, length = 30)
     private int id_Calle;

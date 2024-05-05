@@ -1,8 +1,9 @@
 package group.demo.Service;
 
-
 import group.demo.DTO.LocalidadDTO;
-import group.demo.DTO.PostDTO;
+
+import group.demo.Entity.LocalidadEntity;
+
 import group.demo.Repository.LocalidadRepository;
 
 import org.slf4j.Logger;
@@ -11,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 
@@ -35,7 +37,16 @@ public class LocalidadServiceImpl implements LocalidadService {
 
     @Override
     public LocalidadDTO findById(LocalidadDTO localidadDTO) {
-        return null;
+        log.info("ProbleServiceImpl - findById: Buscar cliente por id: " +
+                localidadDTO.getId());
+
+        Optional<LocalidadEntity> localidadEntity = localidadRepository.findById(localidadDTO.getId());
+        if(localidadEntity.isPresent()) {
+            localidadDTO = LocalidadDTO.ConvertToDTO(localidadEntity.get());
+            return localidadDTO;
+        }else {
+            return null;
+        }
     }
 
 }

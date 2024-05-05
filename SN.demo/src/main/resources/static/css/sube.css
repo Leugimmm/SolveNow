@@ -55,7 +55,24 @@ body > main > div > form > div:nth-child(2) > div.form-group{
 body > main > div > form > button{
     margin-top: 10px;
 }
+.filtro{
+    display:none;
+}
 
+.conte{
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    height: 300px;
+    overflow-y: auto;
+}
+
+body > main > div > form > div:nth-child(1) > div:nth-child(1){
+    position: relative;
+}
+body > main > div > form > div:nth-child(1) > div:nth-child(2){
+position: relative;
+}
 @media only screen and (max-width: 660px) {
 
     body > main > div > form > div:nth-child(2) > div.form-group{

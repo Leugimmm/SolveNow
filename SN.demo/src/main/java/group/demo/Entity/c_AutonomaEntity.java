@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "c_Autonoma", schema = "solveNow", catalog = "")
+@Table(name = "Autonoma", schema = "solveNow", catalog = "")
 public class c_AutonomaEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id

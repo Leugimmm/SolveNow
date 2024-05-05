@@ -12,7 +12,7 @@ public class LocalidadEntity {
     @Column(name = "ID", nullable = false)
     private int id;
     @Basic
-    @Column(name = "ID_C.Autonoma", nullable = false)
+    @Column(name = "ID_Autonoma", nullable = false)
     private int idC_Autonoma;
     @Basic
     @Column(name = "NOMBRE", nullable = true, length = 30)
