@@ -28,7 +28,7 @@ public class PostEntity {
     private String foto;
     @Basic
     @Column(name = "NIVEL", nullable = true, length = 30)
-    private String nivel;
+    private int nivel;
     @Basic
     @Column(name = "VISTO", nullable = true, length = 30)
     private String visto;

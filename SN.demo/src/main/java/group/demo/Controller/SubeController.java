@@ -64,7 +64,17 @@ public class SubeController {
     public boolean comprobarUsuario (@RequestBody PostDTO postDTO){
         log.info(String.valueOf(postDTO));
         postDTO.setId_Usuario(null);
+        if(postDTO.getId_problema()==1){
+            postDTO.setNivel(3);
+        } else if (postDTO.getId_problema()==2) {
+            postDTO.setNivel(2);
+        } else if (postDTO.getId_problema()==3) {
+            postDTO.setNivel(2);
+        } else if (postDTO.getId_problema()==4) {
+            postDTO.setNivel(1);
+        }
         postService.save(postDTO);
+
         return true;
     }
     private static String UPLOAD_DIR = "src/main/resources/static/imagenes/";

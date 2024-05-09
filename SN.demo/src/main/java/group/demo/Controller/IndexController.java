@@ -1,6 +1,7 @@
 package group.demo.Controller;
 
 import group.demo.DTO.PostDTO;
+import group.demo.DTO.c_AutonomaDTO;
 import group.demo.Service.PostService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,5 +28,9 @@ public class IndexController {
         return mav;
     }
 
+    @GetMapping("/api/post")
+    public List<PostDTO> getAuto(){
+        return postService.findAll();
+    }
 
 }

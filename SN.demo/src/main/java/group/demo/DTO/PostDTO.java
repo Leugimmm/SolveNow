@@ -13,7 +13,7 @@ public class PostDTO {
     private int id_problema;
     private String descripcion;
     private String foto;
-    private String nivel;
+    private int nivel;
     private String visto;
     private String solucionado;
 
