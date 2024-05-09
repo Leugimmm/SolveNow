@@ -93,7 +93,7 @@ window.addEventListener("load", function (event) {
 })
 
 function index(conte,pro,ca,loca){
-console.log(conte)
+
 let padre = document.getElementById('contenedor');
 
 let div1 = document.createElement('div');
