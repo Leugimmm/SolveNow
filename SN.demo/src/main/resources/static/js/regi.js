@@ -1,3 +1,10 @@
+
+
+const back = document.getElementById('back');
+back.addEventListener('click', () => {
+window.location.href = "http://localhost:8888/";
+});
+
 const formu = document.querySelector('form');
 
 formu.addEventListener('submit', e => {

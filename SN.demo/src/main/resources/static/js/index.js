@@ -1,8 +1,45 @@
-const sube = document.getElementById('sube');
+let ini = document.getElementById('ini');
+let regi = document.getElementById('regi');
+if (JSON.parse(localStorage.getItem('usuario1')) !== null) {
+let padre=document.getElementById('usuario');
+    // El localStorage existe, puedes realizar acciones adicionales aquí
+    var valorAlmacenado = JSON.parse(localStorage.getItem('usuario1'));
+    console.log('El valor almacenado es: ', valorAlmacenado);
+  const sube = document.getElementById('sube');
+  sube.addEventListener('click', () => {
+  window.location.href = "http://localhost:8888/sube";
+  });
+  regi.remove();
+  ini.remove();
 
+  let bu=document.createElement('button');
+
+  bu.setAttribute('id','usu');
+
+  bu.textContent=valorAlmacenado.username;
+
+  padre.appendChild(bu);
+
+
+
+
+} else {
+const sube = document.getElementById('sube');
 sube.addEventListener('click', () => {
-window.location.href = "http://localhost:8888/sube";
-});
+  Swal.fire({
+                                                    title: 'Necessita estar logeado',
+                                                    icon: 'success',
+                                                    showConfirmButton: false,
+                                                    timer: 2000 // Muestra el mensaje durante 2 segundos
+                                                  })
+  });
+
+    // El localStorage no existe o no tiene un valor para la clave 'miClave'
+    console.log('El localStorage no tiene un valor para la clave "miClave".');
+}
+
+
+
 
 
 const sube2 = document.getElementById('index');
@@ -10,6 +47,19 @@ const sube2 = document.getElementById('index');
 sube2.addEventListener('click', () => {
 window.location.href = "http://localhost:8888";
 });
+
+
+ini.addEventListener('click', () => {
+window.location.href = "http://localhost:8888/login";
+});
+
+
+
+regi.addEventListener('click', () => {
+window.location.href = "http://localhost:8888/regi";
+});
+
+
 
 window.addEventListener("load", function (event) {
 
@@ -123,5 +173,9 @@ div1.appendChild(div2);
 div2.appendChild(img);
 div2.appendChild(p);
 div2.appendChild(p2);
+ div1.addEventListener('click', function (e) {
+            window.location = "http://localhost:8888/problema?"+conte.id;
+        });
+
 
 }

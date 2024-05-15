@@ -1,4 +1,8 @@
+const sube2 = document.getElementById('index');
 
+sube2.addEventListener('click', () => {
+window.location.href = "http://localhost:8888";
+});
 window.addEventListener("load", function (event) {
     let url = 'http://localhost:8888/api/auto'
     let url2= 'http://localhost:8888/api/loca'

@@ -1,5 +1,7 @@
 package group.demo.Service;
 
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import group.demo.DTO.PostDTO;
 import group.demo.Entity.PostEntity;
 import group.demo.Repository.PostRepository;
@@ -49,5 +51,28 @@ public class PostServiceImpl implements PostService{
 
         PostEntity postEntity = PostDTO.ConvertToEntity(postDTO);
         postRepository.save(postEntity);
+    }
+    @Override
+    public List<PostDTO> filtrado(String respuesta) {
+        log.info("buscando por filtro" + respuesta);
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+            JsonNode jsonNode = mapper.readTree(respuesta);
+            int idProblemaNode = jsonNode.get("problema").asInt();
+            int idNiNode = jsonNode.get("nivel").asInt();
+            int  idAuNode = jsonNode.get("au").asInt();
+            int idLocaNode = jsonNode.get("loca").asInt();
+
+            List<PostDTO> listaPosDTO = postRepository.filtrado(idProblemaNode,idNiNode,idAuNode,idLocaNode)
+                    .stream()
+                    .map(p -> PostDTO.ConvertToDTO(p))
+                    .collect(Collectors.toList());
+            log.info(String.valueOf(listaPosDTO));
+            log.info("size: " + listaPosDTO.size());
+            return listaPosDTO;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

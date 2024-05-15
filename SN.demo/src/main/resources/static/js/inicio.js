@@ -1,3 +1,11 @@
+const regi = document.getElementById('regi');
+
+
+const back = document.getElementById('back');
+back.addEventListener('click', () => {
+window.location.href = "http://localhost:8888/";
+});
+
 const formu = document.querySelector('form');
 
  formu.addEventListener('submit', e => {
@@ -50,12 +58,13 @@ function response(data) {
         .then(data => {
         console.log(JSON.stringify(data));
             let usuario = {
-                "imgperfil": data.imgperfil,
-                "username": data.username,
-                "correo": data.correo
-            }
-            localStorage.setItem("usuario", JSON.stringify(usuario));
-            console.log('login');
+                           "id":data.id,
+                           "username": data.nombre,
+                           "correo": data.email
+                       }
+                     localStorage.setItem("usuario1", JSON.stringify(usuario));
+
+           window.location.href="http://localhost:8888/";
         })
 
     } else {
