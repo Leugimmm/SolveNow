@@ -87,7 +87,7 @@ public class SubeController {
             Path path = Paths.get(UPLOAD_DIR + file.getOriginalFilename());
 
             // Crear el directorio si no existe
-            Files.createDirectories(path.getParent());
+            //Files.createDirectories(path.getParent());
 
             Files.write(path, bytes);
             return ResponseEntity.ok("File uploaded successfully!");
