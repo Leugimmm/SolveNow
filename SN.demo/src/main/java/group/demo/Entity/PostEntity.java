@@ -35,4 +35,10 @@ public class PostEntity {
     @Basic
     @Column(name = "SOLUCIONADO", nullable = true, length = 30)
     private String solucionado;
+    @Basic
+    @Column(name = "ID_localidad", nullable = true, length = 30)
+    private int id_localidad;
+    @Basic
+    @Column(name = "ID_Autonoma", nullable = true, length = 30)
+    private int id_Autonoma;
 }

@@ -10,6 +10,7 @@ window.addEventListener("load", function (event)  {
     let url4 = 'http://localhost:8888/api/loca';
       let url3 = 'http://localhost:8888/api/calle';
       let url2 = 'http://localhost:8888/api/problema';
+      let url5 = 'http://localhost:8888/api/auto';
  // Concatena el dato como parámetro en la URL
  fetch(url, {
      method: "GET",
@@ -69,14 +70,34 @@ console.log('3');
                                                   let local;
 
                                                   for (let x = 0; x < data4.length; x++) {
-                                                      if (data4[x].id == loca) {
+                                                      if (conte.id_localidad == data4[x].id) {
                                                           local = data4[x].ciudad;
 
                                                       }
 
                                                   }
 
-                                                  Ver(conte, pro, ca, local);
+                                                   fetch(url5, {
+                                                      method: "GET",
+                                                               headers: {
+                                                            "Content-Type": "application/json"
+                                                         },
+                                                             })
+                                                                    .then(response => response.json())
+                                                                                .then(data5 => {
+                                                                           let au;
+
+                                                               for (let x = 0; x < data5.length; x++) {
+                                                                            if (conte.id_Autonoma == data5[x].id) {
+                                                                          au = data5[x].c_autonoma;
+                                                                                       }
+
+                                                                              }
+
+                                                          Ver(conte, pro, ca, local,au);
+
+                                                                   }
+                                                                     )
 
                                               }
                                               )
@@ -89,7 +110,7 @@ console.log('3');
 
 });
 
-function Ver(conte, pro, ca, local){
+function Ver(conte, pro, ca, local,au){
 let prob=document.getElementById('proble');
 let desc=document.getElementById('exampleFormControlTextarea1');
 let lu=document.getElementById('validationServer01');
@@ -100,7 +121,7 @@ console.log(local);
 prob.textContent=pro;
 desc.textContent=conte.descripcion;
 img.src="./imagenes/"+conte.foto;
-lu.value=local+', '+ca;
+lu.value=au+', '+local+', '+ca;
 
 niv.value=conte.nivel;
 

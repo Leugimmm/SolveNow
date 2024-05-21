@@ -146,7 +146,7 @@ foto.addEventListener('change', function () {
 })
 
 document.getElementById('validationServer01').addEventListener('keyup', e => {
-    console.log(e.target.value);
+
 
     document.querySelectorAll('body > main > div > form > div:nth-child(1) > div:nth-child(1) .list-group-item').forEach(element => {
         element.textContent.toLowerCase().includes(e.target.value.toLowerCase())
@@ -183,7 +183,7 @@ document.getElementById('validationServer01').addEventListener('click', e => {
 })
 
 document.getElementById('validationServer02').addEventListener('keyup', e => {
-    console.log(e.target.value);
+
 
     document.querySelectorAll('body > main > div > form > div:nth-child(1) > div:nth-child(2) .list-group-item').forEach(element => {
         element.textContent.toLowerCase().includes(e.target.value.toLowerCase())
@@ -221,7 +221,7 @@ document.getElementById('validationServer02').addEventListener('click', e => {
 
 })
 document.getElementById('validationServerUsername').addEventListener('keyup', e => {
-    console.log(e.target.value);
+
 
     document.querySelectorAll('body > main > div > form > div:nth-child(1) > div:nth-child(3) .list-group-item').forEach(element => {
         element.textContent.toLowerCase().includes(e.target.value.toLowerCase())
@@ -258,7 +258,7 @@ document.getElementById('validationServerUsername').addEventListener('click', e 
 
 
 document.getElementById('validationServer05').addEventListener('keyup', e => {
-    console.log(e.target.value);
+
 
     document.querySelectorAll('body > main > div > form > div:nth-child(2) > div.col-md-3.mb-3 .list-group-item').forEach(element => {
         element.textContent.toLowerCase().includes(e.target.value.toLowerCase())
@@ -370,7 +370,6 @@ formu.addEventListener('submit', e => {
                                 }
                             }
 
-
                             fetch(url4, {
                                 method: "GET",
                                 headers: {
@@ -395,7 +394,7 @@ formu.addEventListener('submit', e => {
                                      const file = fileInput.files[0];
                                      console.log(file.name);
 
-                                    let  data2 = { "id_Calle": cal, "id_problema": pro,"descripcion":descripcion.value,"foto":file.name};
+                                    let  data2 = { "id_Calle": cal, "id_problema": pro,"descripcion":descripcion.value,"foto":file.name,"id_Autonoma":comuna,"id_localidad":local};
                                      fetch(url5, {
                                             method: "POST",
                                             headers: {

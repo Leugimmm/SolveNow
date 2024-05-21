@@ -94,3 +94,13 @@ main>div>div>div>img{
     p{
         margin: 0;
     }
+    .filtro{
+          display:none;
+      }
+      .conte{
+          position: absolute;
+          width: 100%;
+          z-index: 1;
+          height: 300px;
+          overflow-y: auto;
+      }

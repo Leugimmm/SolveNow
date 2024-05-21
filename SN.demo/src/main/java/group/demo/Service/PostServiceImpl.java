@@ -3,6 +3,7 @@ package group.demo.Service;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import group.demo.DTO.PostDTO;
+import group.demo.Entity.MiObjeto;
 import group.demo.Entity.PostEntity;
 import group.demo.Repository.PostRepository;
 import org.slf4j.Logger;
@@ -55,15 +56,18 @@ public class PostServiceImpl implements PostService{
     @Override
     public List<PostDTO> filtrado(String respuesta) {
         log.info("buscando por filtro" + respuesta);
+
+
         try {
             ObjectMapper mapper = new ObjectMapper();
-            JsonNode jsonNode = mapper.readTree(respuesta);
-            int idProblemaNode = jsonNode.get("problema").asInt();
-            int idNiNode = jsonNode.get("nivel").asInt();
-            int  idAuNode = jsonNode.get("au").asInt();
-            int idLocaNode = jsonNode.get("loca").asInt();
+            MiObjeto miObjeto = mapper.readValue(respuesta, MiObjeto.class);
 
-            List<PostDTO> listaPosDTO = postRepository.filtrado(idProblemaNode,idNiNode,idAuNode,idLocaNode)
+            log.info("uscando por filtro" + miObjeto.getP());
+
+
+            log.info("uscando por filtro" +miObjeto.getCa());
+
+            List<PostDTO> listaPosDTO = postRepository.filtrado(miObjeto.getComun(), miObjeto.getLo(),miObjeto.getCa(),miObjeto.getP(),miObjeto.getN())
                     .stream()
                     .map(p -> PostDTO.ConvertToDTO(p))
                     .collect(Collectors.toList());

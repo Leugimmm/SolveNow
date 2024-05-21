@@ -65,6 +65,7 @@ window.addEventListener("load", function (event) {
 
     let url = 'http://localhost:8888/api/post';
     let url4 = 'http://localhost:8888/api/loca';
+    let url5 = 'http://localhost:8888/api/auto';
     let url3 = 'http://localhost:8888/api/calle';
     let url2 = 'http://localhost:8888/api/problema';
     fetch(url, {
@@ -124,13 +125,35 @@ window.addEventListener("load", function (event) {
                                         let local;
 
                                         for (let x = 0; x < data4.length; x++) {
-                                            if (data4[x].id == loca) {
+                                            if (data4[x].id == conte[i].id_localidad) {
                                                 local = data4[x].ciudad;
 
                                             }
 
                                         }
-                                        index(conte[i], pro, ca, local);
+                                         fetch(url5, {
+                                               method: "GET",
+                                                    headers: {
+                                                 "Content-Type": "application/json"
+                                             },
+                                               })
+                                               .then(response => response.json())
+                                                     .then(data5 => {
+                                                     let au;
+
+                                               for (let x = 0; x < data5.length; x++) {
+                                                       if (conte[i].id_Autonoma == data5[x].id) {
+                                                         au = data5[x].c_autonoma;
+                                                              }
+
+                                                                 }
+
+                                                     index(conte[i], pro, ca, local,au);
+
+                                              }
+                                             )
+
+
 
                                     }
                                     )
@@ -142,7 +165,8 @@ window.addEventListener("load", function (event) {
             })
 })
 
-function index(conte,pro,ca,loca){
+function index(conte,pro,ca,loca,au){
+
 
 let padre = document.getElementById('contenedor');
 
@@ -158,7 +182,7 @@ img.setAttribute('src',imgdata);
 
 p.textContent=pro;
 
-p2.textContent=loca+', '+ca;
+p2.textContent=au+', '+loca+', '+ca;
 
 padre.appendChild(div1);
 if(conte.nivel==1){

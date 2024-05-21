@@ -65,6 +65,7 @@ public class IndexController {
 
         String json = "";
         try {
+
             json = objectMapper.writeValueAsString(arrayNode);
 
         }catch (Exception e){

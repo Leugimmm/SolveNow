@@ -16,6 +16,8 @@ public class PostDTO {
     private int nivel;
     private String visto;
     private String solucionado;
+    private int id_localidad;
+    private int id_Autonoma;
 
     public static PostEntity ConvertToEntity(PostDTO dto){
         PostEntity entity = new PostEntity();
@@ -28,6 +30,8 @@ public class PostDTO {
         entity.setNivel(dto.getNivel());
         entity.setVisto(dto.getVisto());
         entity.setSolucionado(dto.getSolucionado());
+        entity.setId_localidad(dto.getId_localidad());
+        entity.setId_Autonoma(dto.getId_Autonoma());
         return entity;
     }
     public static PostDTO ConvertToDTO(PostEntity entity){
@@ -41,6 +45,8 @@ public class PostDTO {
         dto.setNivel(entity.getNivel());
         dto.setVisto(entity.getVisto());
         dto.setSolucionado(entity.getSolucionado());
+        dto.setId_localidad(entity.getId_localidad());
+        dto.setId_Autonoma(entity.getId_Autonoma());
         return dto;
     }
 }
