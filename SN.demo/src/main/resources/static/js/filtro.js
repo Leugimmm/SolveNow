@@ -251,48 +251,48 @@ document.getElementById('validationServer03').addEventListener('click', e => {
 
 let filtro= document.getElementById('confirmButton');
 
-filtro.addEventListener('click',function(){
-let comu=document.getElementById('validationServer01');
-let loca=document.getElementById('validationServer02');
-let calle=document.getElementById('validationServer03');
+filtro.addEventListener('click', function () {
+    let comu = document.getElementById('validationServer01');
+    let loca = document.getElementById('validationServer02');
+    let calle = document.getElementById('validationServer03');
 
-let pro1=document.getElementsByName('Desastre Natural')[0];
-let pro2=document.getElementsByName('Desastre urbano')[0];
-let pro3=document.getElementsByName('Problema de infraestructura')[0];
-let pro4=document.getElementsByName('Mejora')[0];
-let ni1=document.getElementsByName('1')[0];
-let ni2=document.getElementsByName('2')[0];
-let ni3=document.getElementsByName('3')[0];
+    let pro1 = document.getElementsByName('Desastre Natural')[0];
+    let pro2 = document.getElementsByName('Desastre urbano')[0];
+    let pro3 = document.getElementsByName('Problema de infraestructura')[0];
+    let pro4 = document.getElementsByName('Mejora')[0];
+    let ni1 = document.getElementsByName('1')[0];
+    let ni2 = document.getElementsByName('2')[0];
+    let ni3 = document.getElementsByName('3')[0];
 
-let pro = [];
-let ni = [];
-if(pro1.checked){
- pro.push(pro1.value);
-}
-if(pro2.checked){
-pro.push(pro2.value);
-}
-if(pro3.checked){
-pro.push(pro3.value);
-}
-if(pro4.checked){
-pro.push(pro4.value);
-}
+    let pro = [];
+    let ni = [];
+    if (pro1.checked) {
+        pro.push(pro1.value);
+    }
+    if (pro2.checked) {
+        pro.push(pro2.value);
+    }
+    if (pro3.checked) {
+        pro.push(pro3.value);
+    }
+    if (pro4.checked) {
+        pro.push(pro4.value);
+    }
 
-if(ni1.checked){
-ni.push(ni1.value)
-}
-if(ni2.checked){
-ni.push(ni2.value)
-}
-if(ni3.checked){
-ni.push(ni3.value)
-}
-  let url = 'http://localhost:8888/api/auto'
+    if (ni1.checked) {
+        ni.push(ni1.value)
+    }
+    if (ni2.checked) {
+        ni.push(ni2.value)
+    }
+    if (ni3.checked) {
+        ni.push(ni3.value)
+    }
+    let url = 'http://localhost:8888/api/auto'
     let url2 = 'http://localhost:8888/api/loca'
     let url3 = 'http://localhost:8888/api/calle'
 
- fetch(url, {
+    fetch(url, {
         method: "GET",
         headers: {
             "Content-Type": "application/json"
@@ -305,7 +305,7 @@ ni.push(ni3.value)
             for (let i = 0; i < data.length; i++) {
 
                 if (comu.value == data[i].c_autonoma) {
-                     comuna = data[i].id;
+                    comuna = data[i].id;
 
                 }
             }
@@ -344,32 +344,179 @@ ni.push(ni3.value)
                                 }
                             }
                             const body = {
-                                    comun: comuna,
-                                    lo: local,
-                                    ca: cal,
-                                    p: pro,
-                                    n: ni
+                                comun: comuna,
+                                lo: local,
+                                ca: cal,
+                                p: pro,
+                                n: ni
+                            }
+                            console.log(body);
+                            fetch("http://localhost:8888/explorar/filtro", {
+                                method: 'POST',
+                                body: JSON.stringify(body),
+                                headers: {
+                                    'Content-Type': 'application/json'
                                 }
-                                console.log(body);
-                                fetch("http://localhost:8888/explorar/filtro", {
-                                        method: 'POST',
-                                        body: JSON.stringify(body),
-                                        headers: {
-                                            'Content-Type': 'application/json'
-                                        }
-                                    }).then(response => response.json()).then( data => {
-                                        console.log(data);
-                                    }).catch(error => console.error(error));
+                            }).then(response => response.json()).then(data => {
+                                let url4 = 'http://localhost:8888/api/loca';
+                                let url5 = 'http://localhost:8888/api/auto';
+                                  url3 = 'http://localhost:8888/api/calle';
+                                  url2 = 'http://localhost:8888/api/problema';
+                                let conte = data;
 
-                               })
-                                    })
+                                let padre = document.getElementById('contenedor');
+
+                                padre.innerHTML = "";
+
+                                let nav = document.createElement('nav');
+                                let butt = document.createElement('button');
+                                let butt2 = document.createElement('button');
+                                butt.textContent = 'Problemas por soluciones';
+                                butt2.textContent = 'Problemas solucionados';
+
+                                padre.appendChild(nav);
+                                nav.appendChild(butt);
+                                nav.appendChild(butt2)
+
+                                for (let i = 0; i < conte.length; i++) {
+                                fetch(url2, {
+                                                    method: "GET",
+                                                    headers: {
+                                                        "Content-Type": "application/json"
+                                                    },
+                                                })
+                                                    .then(response => response.json())
+                                                    .then(data2 => {
+                                                        let pro;
+
+                                                        for (let x = 0; x < data2.length; x++) {
+                                                            if (data2[x].id == conte[i].ID_PROBLEMA) {
+                                                                pro = data2[x].problema;
+
+                                                            }
+                                                        }
+                                                        fetch(url3, {
+                                                                                    method: "GET",
+                                                                                    headers: {
+                                                                                        "Content-Type": "application/json"
+                                                                                    },
+                                                                                })
+                                                                                    .then(response => response.json())
+                                                                                    .then(data3 => {
+
+                                                                                        let ca;
+                                                                                        let loca;
+
+                                                                                        for (let x = 0; x < data3.length; x++) {
+                                                                                            if (data3[x].id == conte[i].ID_CALLE) {
+                                                                                                ca = data3[x].calle;
+                                                                                                loca = data3[x].id_localidad;
+
+                                                                                            }
+                                                                                        }
+                                                                                        fetch(url4, {
+                                                                                            method: "GET",
+                                                                                            headers: {
+                                                                                                "Content-Type": "application/json"
+                                                                                            },
+                                                                                        })
+                                                                                            .then(response => response.json())
+                                                                                            .then(data4 => {
+                                                                                                let local;
+
+                                                                                                for (let x = 0; x < data4.length; x++) {
+                                                                                                    if (data4[x].id == conte[i].ID_LOCALIDAD) {
+                                                                                                        local = data4[x].ciudad;
+
+                                                                                                    }
+
+                                                                                                }
+                                                                                                 fetch(url5, {
+                                                                                                       method: "GET",
+                                                                                                            headers: {
+                                                                                                         "Content-Type": "application/json"
+                                                                                                     },
+                                                                                                       })
+                                                                                                       .then(response => response.json())
+                                                                                                             .then(data5 => {
+                                                                                                             let au;
+
+                                                                                                       for (let x = 0; x < data5.length; x++) {
+                                                                                                               if (conte[i].ID_AUTONOMA == data5[x].id) {
+                                                                                                                 au = data5[x].c_autonoma;
+                                                                                                                      }
+
+                                                                                                                         }
+
+                                                                                                                let img=conte[i].FOTO;
+
+                                                                                                             index2(conte[i], pro, ca, local,au,img);
+
+                                                                                                      }
+                                                                                                     )
 
 
 
+                                                                                            }
+                                                                                            )
+                                                                                    }
+                                                                                    )
+
+                                                        })
+
+                                }
 
                             })
+
+                        })
+                })
+
+
+
+
+        })
 
 
 
 
 })
+
+function index2(conte,pro,ca,loca,au,img2){
+
+
+let padre = document.getElementById('contenedor');
+
+let div1 = document.createElement('div');
+let div2 = document.createElement('div');
+
+let img = document.createElement('img');
+let p = document.createElement('p');
+let p2 = document.createElement('p');
+
+
+let imgdata="./imagenes/"+img2;
+img.setAttribute('src',imgdata);
+
+p.textContent=pro;
+
+p2.textContent=au+', '+loca+', '+ca;
+
+padre.appendChild(div1);
+if(conte.NIVEL==1){
+div1.style.backgroundColor = 'green';
+}else if(conte.NIVEL==2){
+div1.style.backgroundColor = 'yellow';
+}else if(conte.NIVEL==3){
+div1.style.backgroundColor = 'red';
+}
+
+div1.appendChild(div2);
+div2.appendChild(img);
+div2.appendChild(p);
+div2.appendChild(p2);
+ div1.addEventListener('click', function (e) {
+            window.location = "http://localhost:8888/problema?"+conte.id;
+        });
+
+
+}

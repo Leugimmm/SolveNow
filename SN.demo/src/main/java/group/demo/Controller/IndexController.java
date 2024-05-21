@@ -56,6 +56,8 @@ public class IndexController {
                 objetoNode.put("NIVEL", postDTO.getNivel());
                 objetoNode.put("VISTO", postDTO.getVisto());
                 objetoNode.put("SOLUCIONADO", postDTO.getSolucionado());
+                objetoNode.put("ID_AUTONOMA", postDTO.getId_Autonoma());
+                objetoNode.put("ID_LOCALIDAD", postDTO.getId_localidad());
 
                 arrayNode.add(objetoNode);
             }

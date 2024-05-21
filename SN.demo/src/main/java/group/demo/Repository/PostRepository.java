@@ -15,9 +15,9 @@ public interface PostRepository extends JpaRepository<PostEntity, Integer> {
     @Query(value = "SELECT * FROM post WHERE" +
             "    (id_Problema IN (:paramPro)) AND" +
             "    (Nivel IN (:paramNi)) AND" +
-            "    (:paramAu IS NULL OR id_Autonoma = :paramAu) AND " +
+            "    (:paramAu = 0 OR id_Autonoma = :paramAu) AND " +
             "    (:paramCa = 0 OR id_Calle = :paramCa) AND " +
-            "    (:paramLo IS NULL OR id_localidad = :paramLo);", nativeQuery = true )
+            "    (:paramLo = 0 OR id_localidad = :paramLo);", nativeQuery = true )
     //StringBuilder
     public List<PostEntity> filtrado(@Param("paramAu") int au, @Param("paramLo") int lo, @Param("paramCa") int ca, @Param("paramPro") List<Integer> pro,@Param("paramNi") List<Integer> ni);
 

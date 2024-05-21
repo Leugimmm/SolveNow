@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -61,11 +62,25 @@ public class PostServiceImpl implements PostService{
         try {
             ObjectMapper mapper = new ObjectMapper();
             MiObjeto miObjeto = mapper.readValue(respuesta, MiObjeto.class);
+            List<Integer> n = new ArrayList<>();
+            n.add(1);
+            n.add(2);
+            n.add(3);
+            List<Integer> pr = new ArrayList<>();
+            pr.add(1);
+            pr.add(2);
+            pr.add(3);
+            pr.add(4);
 
             log.info("uscando por filtro" + miObjeto.getP());
+            if(miObjeto.getN().size()==0){
+                miObjeto.setN(n);
+            }
+            if(miObjeto.getP().size()==0){
+                miObjeto.setP(pr);
+            }
 
-
-            log.info("uscando por filtro" +miObjeto.getCa());
+            log.info("uscando por filtro" +miObjeto.getN());
 
             List<PostDTO> listaPosDTO = postRepository.filtrado(miObjeto.getComun(), miObjeto.getLo(),miObjeto.getCa(),miObjeto.getP(),miObjeto.getN())
                     .stream()
