@@ -167,7 +167,9 @@ document.getElementById('validationServer01').addEventListener('click', e => {
 
     document.querySelectorAll('#filterOptions > div:nth-child(3) > div > ul > li').forEach(element => {
 
-        element.classList.remove('filtro')
+         element.textContent.toLowerCase().includes(e.target.value.toLowerCase())
+                                     ? element.classList.remove('filtro')
+                                     : element.classList.add("filtro")
 
 
     })
@@ -204,7 +206,9 @@ document.getElementById('validationServer02').addEventListener('click', e => {
 
     document.querySelectorAll('#filterOptions > div:nth-child(4) > div > ul > li').forEach(element => {
 
-        element.classList.remove('filtro')
+         element.textContent.toLowerCase().includes(e.target.value.toLowerCase())
+                                     ? element.classList.remove('filtro')
+                                     : element.classList.add("filtro")
 
 
     })
@@ -242,7 +246,9 @@ document.getElementById('validationServer03').addEventListener('click', e => {
 
     document.querySelectorAll('#filterOptions > div:nth-child(5) > div > ul > li').forEach(element => {
 
-        element.classList.remove('filtro')
+         element.textContent.toLowerCase().includes(e.target.value.toLowerCase())
+                                     ? element.classList.remove('filtro')
+                                     : element.classList.add("filtro")
 
 
     })

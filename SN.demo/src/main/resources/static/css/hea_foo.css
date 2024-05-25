@@ -84,7 +84,91 @@ body > header > div:nth-child(5){
 header>div:first-of-type{
     width: 1%;
 }
+#usuario>ul>li:first-child {
+    display: block;
+}
+.profile-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.profile-dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.profile-dropdown-content a:hover {
+    background-color: #a7a7a7;
+    transition-duration: 0.5s;
+}
+
+
+
+.dropbtn {
+    background-color: rgb(0, 0, 0, 0);
+    transform: scale(0.6);
+    font-size: 16px;
+    border-radius: 10px;
+    border-style: none;
+    cursor: pointer;
+    left: 0;
+}
+
+.dropbtn:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.show {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out, scaleIn 0.3s ease-in-out;
+}
+
+@keyframes scaleIn {
+    from {
+        background-color: rgb(46, 46, 46,0.5);
+        top:40px;
+        transform: scaleY(0);
+    }
+
+    to {
+        background-color: #ebebeb;
+        top:106px;
+        transform: scaleY(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+
+
+        opacity: 0;
+    }
+
+    to {
+
+        opacity: 1;
+    }
+}
+
 @media only screen and (max-width: 800px) {
+
+
+.profile-dropdown {
+        width:70px;
+    }
+ .profile {
+        transform: scale(0.6);
+
+    }
+
+    .profile-dropdown-content {
+        right: 6%;
+    }
     header{
         height: 100px;
     }
@@ -125,5 +209,14 @@ header>div:first-of-type{
         margin-left: 6px;
     }
 
+    footer>h2{
+    font-size:16px;
+    }
+    footer>p{
+        font-size:10px;
+        }
+header>h1{
+font-size:24px;
+}
     
 }

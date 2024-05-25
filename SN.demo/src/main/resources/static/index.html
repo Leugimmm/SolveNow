@@ -70,9 +70,45 @@
         <div></div>
         <button id="sube">Sube Algo!</button>
         <button id="filterButton">Filtro</button>
-        <div id="usuario"><button id="ini">Iniciar sesion</button>
-            <button id="regi">Registro</button></div>
-        
+        <div id="usuario">
+
+
+            <div class="profile-dropdown">
+
+                <button class="dropbtn">
+                    <svg id="profile" class="profile" width="100px" height="100px" viewBox="0 0 40 40" fill="none"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <g id="Frame">
+                            <g id="Group 3">
+                                <path id="Vector"
+                                      d="M20.2 21.3C20.0833 21.2833 19.9333 21.2833 19.8 21.3C16.8667 21.2 14.5333 18.8 14.5333 15.85C14.5333 12.8333 16.9667 10.3833 20 10.3833C23.0167 10.3833 25.4667 12.8333 25.4667 15.85C25.45 18.8 23.1333 21.2 20.2 21.3Z"
+                                      stroke="#F6F6F6" stroke-width="2.5" stroke-linecap="round"
+                                      stroke-linejoin="round" />
+                            </g>
+                            <g id="Group 2">
+                                <path id="Vector_2"
+                                      d="M31.2333 32.3002C28.2667 35.0168 24.3333 36.6668 20 36.6668C15.6667 36.6668 11.7334 35.0168 8.76668 32.3002C8.93335 30.7335 9.93335 29.2002 11.7167 28.0002C16.2834 24.9668 23.75 24.9668 28.2833 28.0002C30.0667 29.2002 31.0667 30.7335 31.2333 32.3002Z"
+                                      stroke="#F6F6F6" stroke-width="2.5" stroke-linecap="round"
+                                      stroke-linejoin="round" />
+                            </g>
+                            <g id="Group 1">
+                                <path id="Vector_3"
+                                      d="M20 36.6667C29.2047 36.6667 36.6667 29.2047 36.6667 20C36.6667 10.7953 29.2047 3.33333 20 3.33333C10.7953 3.33333 3.33333 10.7953 3.33333 20C3.33333 29.2047 10.7953 36.6667 20 36.6667Z"
+                                      stroke="#F6F6F6" stroke-width="2.5" stroke-linecap="round"
+                                      stroke-linejoin="round" />
+                            </g>
+                        </g>
+                    </svg>
+                </button>
+
+                <div id="profileDropdown" class="profile-dropdown-content  mostrar">
+                    <a href="http://localhost:8888/login" class="a" id="ini">Inicio de sesion</a>
+                    <a href="http://localhost:8888/regi" class="a" id="regi">Registrarse</a>
+                </div>
+
+            </div>
+
+        </div>
     
     </header>
     <main>
@@ -115,6 +151,7 @@
 
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/header.js"></script>
     <script src="js/filtro.js"></script>
     <script src="js/index.js"></script>
 </body>

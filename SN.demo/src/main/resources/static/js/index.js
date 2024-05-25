@@ -1,7 +1,8 @@
+
 let ini = document.getElementById('ini');
 let regi = document.getElementById('regi');
 if (JSON.parse(localStorage.getItem('usuario1')) !== null) {
-let padre=document.getElementById('usuario');
+
     // El localStorage existe, puedes realizar acciones adicionales aquí
     var valorAlmacenado = JSON.parse(localStorage.getItem('usuario1'));
     console.log('El valor almacenado es: ', valorAlmacenado);
@@ -9,16 +10,20 @@ let padre=document.getElementById('usuario');
   sube.addEventListener('click', () => {
   window.location.href = "http://localhost:8888/sube";
   });
-  regi.remove();
-  ini.remove();
+let ini = document.getElementById('ini');
+let regi = document.getElementById('regi');
 
-  let bu=document.createElement('button');
+  ini.textContent='Perfil';
+  regi.textContent='Cerrar sesion';
 
-  bu.setAttribute('id','usu');
+ini.href="http://localhost:8888/perfil?"+valorAlmacenado.id;
+regi.href="http://localhost:8888/";
 
-  bu.textContent=valorAlmacenado.username;
+ regi.addEventListener('click',function(){
+     localStorage.setItem("usuario1", null);
+    window.location.href="http://localhost:8888/";
+    });
 
-  padre.appendChild(bu);
 
 
 
@@ -49,15 +54,7 @@ window.location.href = "http://localhost:8888";
 });
 
 
-ini.addEventListener('click', () => {
-window.location.href = "http://localhost:8888/login";
-});
 
-
-
-regi.addEventListener('click', () => {
-window.location.href = "http://localhost:8888/regi";
-});
 
 
 

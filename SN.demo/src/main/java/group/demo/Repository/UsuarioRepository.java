@@ -13,4 +13,7 @@ public interface UsuarioRepository extends JpaRepository<UsuariosEntity, Integer
             nativeQuery = true)
     public UsuariosEntity findUsuario(@Param("idc") String correo, @Param("idco") String pass);
 
+
+
+
 }

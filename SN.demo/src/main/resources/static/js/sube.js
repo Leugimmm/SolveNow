@@ -173,7 +173,9 @@ document.getElementById('validationServer01').addEventListener('click', e => {
 
     document.querySelectorAll('body > main > div > form > div:nth-child(1) > div:nth-child(1) .list-group-item').forEach(element => {
 
-        element.classList.remove('filtro')
+         element.textContent.toLowerCase().includes(e.target.value.toLowerCase())
+                                     ? element.classList.remove('filtro')
+                                     : element.classList.add("filtro")
 
 
     })
@@ -210,7 +212,9 @@ document.getElementById('validationServer02').addEventListener('click', e => {
 
     document.querySelectorAll('body > main > div > form > div:nth-child(1) > div:nth-child(2) .list-group-item').forEach(element => {
 
-        element.classList.remove('filtro')
+         element.textContent.toLowerCase().includes(e.target.value.toLowerCase())
+                                     ? element.classList.remove('filtro')
+                                     : element.classList.add("filtro")
 
 
     })
@@ -248,7 +252,9 @@ document.getElementById('validationServerUsername').addEventListener('click', e 
 
     document.querySelectorAll('body > main > div > form > div:nth-child(1) > div:nth-child(3) .list-group-item').forEach(element => {
 
-        element.classList.remove('filtro')
+         element.textContent.toLowerCase().includes(e.target.value.toLowerCase())
+                                     ? element.classList.remove('filtro')
+                                     : element.classList.add("filtro")
 
 
     })
@@ -285,7 +291,9 @@ document.getElementById('validationServer05').addEventListener('click', e => {
 
     document.querySelectorAll('body > main > div > form > div:nth-child(2) > div.col-md-3.mb-3 .list-group-item').forEach(element => {
 
-        element.classList.remove('filtro')
+         element.textContent.toLowerCase().includes(e.target.value.toLowerCase())
+                                     ? element.classList.remove('filtro')
+                                     : element.classList.add("filtro")
 
 
     })
