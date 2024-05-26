@@ -3,6 +3,19 @@ const sube2 = document.getElementById('index');
 sube2.addEventListener('click', () => {
 window.location.href = "http://localhost:8888";
 });
+let valorAlmacenado = JSON.parse(localStorage.getItem('usuario1'));;
+if (JSON.parse(localStorage.getItem('usuario1')) !== null) {
+
+    // El localStorage existe, puedes realizar acciones adicionales aquí
+    valorAlmacenado = JSON.parse(localStorage.getItem('usuario1'));
+    console.log('El valor almacenado es: ', valorAlmacenado);
+
+
+} else {
+             window.location.href = 'http://localhost:8888';
+    // El localStorage no existe o no tiene un valor para la clave 'miClave'
+    console.log('El localStorage no tiene un valor para la clave "miClave".');
+}
 window.addEventListener("load", function (event) {
     let url = 'http://localhost:8888/api/auto'
     let url2= 'http://localhost:8888/api/loca'
@@ -402,7 +415,8 @@ formu.addEventListener('submit', e => {
                                      const file = fileInput.files[0];
                                      console.log(file.name);
 
-                                    let  data2 = { "id_Calle": cal, "id_problema": pro,"descripcion":descripcion.value,"foto":file.name,"id_Autonoma":comuna,"id_localidad":local};
+                                    let  data2 = { "id_Calle": cal, "id_problema": pro,"descripcion":descripcion.value,"foto":file.name,"id_Autonoma":comuna,"id_localidad":local,"id_Usuario":valorAlmacenado.id};
+                                    console.log(data2);
                                      fetch(url5, {
                                             method: "POST",
                                             headers: {

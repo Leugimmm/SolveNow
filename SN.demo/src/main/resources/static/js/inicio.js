@@ -60,7 +60,8 @@ function response(data) {
             let usuario = {
                            "id":data.id,
                            "username": data.nombre,
-                           "correo": data.email
+                           "correo": data.email,
+                           "rol":data.rol
                        }
                      localStorage.setItem("usuario1", JSON.stringify(usuario));
 

@@ -21,7 +21,7 @@ public class UsuariosEntity {
     @Column(name = "Foto", nullable = true, length = 30)
     private String foto;
     @Basic
-    @Column(name = "DESCRIPCION", nullable = true, length = 30)
+    @Column(name = "APELLIDOS", nullable = true, length = 30)
     private String descripcion;
     @Basic
     @Column(name = "EMAIL", nullable = true, length = 30)
