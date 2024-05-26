@@ -1,4 +1,4 @@
-FROM oraclelinux:8-slim
+FROM amazoncorretto:21-alpine-jdk
 
 COPY target2/demo-0.0.1-SNAPSHOT.jar app.jar
 
