@@ -3,7 +3,7 @@ const regi = document.getElementById('regi');
 
 const back = document.getElementById('back');
 back.addEventListener('click', () => {
-window.location.href = "http://localhost:8888/";
+window.location.href = "https://solvenow.onrender.com/";
 });
 
 const formu = document.querySelector('form');
@@ -18,7 +18,7 @@ const formu = document.querySelector('form');
         if (isvalid(password, "password")) {
 
     let  data = { "email": name, "password": password };
-    let url = "http://localhost:8888/api/iniciosesion";
+    let url = "https://solvenow.onrender.com/api/iniciosesion";
 
     fetch(url, {
         method: "POST",
@@ -47,7 +47,7 @@ function response(data) {
     let  data2 = { "email": name, "password": password };
     console.log(data2);
     if (respuesta == "true") {
-        fetch("http://localhost:8888/api/obtenerusuario",
+        fetch("https://solvenow.onrender.com/api/obtenerusuario",
         {
             method: "POST",
             headers: {
@@ -65,7 +65,7 @@ function response(data) {
                        }
                      localStorage.setItem("usuario1", JSON.stringify(usuario));
 
-           window.location.href="http://localhost:8888/";
+           window.location.href="https://solvenow.onrender.com/";
         })
 
     } else {
