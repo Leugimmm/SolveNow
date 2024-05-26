@@ -1,0 +1,106 @@
+body{
+    height: 100%;
+}
+#filterOptions>h1{
+color: black;
+}
+
+#filterOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+  }
+  
+  #filterOptions {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  #confirmButton {
+    display: block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+main>div{
+
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 95%;
+    height: 97%;
+    background-color: rgba(255, 255, 255, 0.89);
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+main>div>nav{
+    display: flex;
+    justify-content: center;
+   
+}
+
+main>div>div{
+    display: flex;
+   
+    margin: 0 auto;
+    margin-top: 10px;
+    height: 250px;
+    background-color: crimson;
+    width: 95%;
+    border-radius: 5px;
+
+}
+
+main>div>div>div{
+    border-radius: 5px;
+    display: flex;
+    width: 97%;
+    height: 230px;
+    margin: 0 auto;
+    margin-top: 10px;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main>div>div>div>p{
+color: black;
+}
+main>div>div>div>img{
+    width: 95%;
+    height: 180px;
+
+
+    }
+
+    p{
+        margin: 0;
+    }
+    .filtro{
+          display:none;
+      }
+      .conte{
+          position: absolute;
+          width: 100%;
+          z-index: 1;
+          height: 300px;
+          overflow-y: auto;
+      }
