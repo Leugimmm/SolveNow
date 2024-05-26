@@ -1,7 +1,7 @@
 const sube2 = document.getElementById('index');
 
 sube2.addEventListener('click', () => {
-window.location.href = "http://localhost:8888";
+window.location.href = "https://solvenow.onrender.com/";
 });
 let valorAlmacenado = JSON.parse(localStorage.getItem('usuario1'));;
 if (JSON.parse(localStorage.getItem('usuario1')) !== null) {
@@ -12,15 +12,15 @@ if (JSON.parse(localStorage.getItem('usuario1')) !== null) {
 
 
 } else {
-             window.location.href = 'http://localhost:8888';
+             window.location.href = 'https://solvenow.onrender.com/';
     // El localStorage no existe o no tiene un valor para la clave 'miClave'
     console.log('El localStorage no tiene un valor para la clave "miClave".');
 }
 window.addEventListener("load", function (event) {
-    let url = 'http://localhost:8888/api/auto'
-    let url2= 'http://localhost:8888/api/loca'
-    let url3= 'http://localhost:8888/api/calle'
-    let url4= 'http://localhost:8888/api/problema'
+    let url = 'https://solvenow.onrender.com/api/auto'
+    let url2= 'https://solvenow.onrender.com/api/loca'
+    let url3= 'https://solvenow.onrender.com/api/calle'
+    let url4= 'https://solvenow.onrender.com/api/problema'
     fetch(url, {
         method: "GET",
         headers: {
@@ -332,12 +332,12 @@ formu.addEventListener('submit', e => {
     let problema = document.getElementById('validationServer05');
 
     console.log(descripcion.value);
-    let url = 'http://localhost:8888/api/auto'
-    let url2 = 'http://localhost:8888/api/loca'
-    let url3 = 'http://localhost:8888/api/calle'
-    let url4 = 'http://localhost:8888/api/problema'
-    let url5 = 'http://localhost:8888/api/sube'
-    let url6= 'http://localhost:8888/upload';
+    let url = 'https://solvenow.onrender.com/api/auto'
+    let url2 = 'https://solvenow.onrender.com/api/loca'
+    let url3 = 'https://solvenow.onrender.com/api/calle'
+    let url4 = 'https://solvenow.onrender.com/api/problema'
+    let url5 = 'https://solvenow.onrender.com/api/sube'
+    let url6= 'https://solvenow.onrender.com/upload';
 
     fetch(url, {
         method: "GET",

@@ -11,10 +11,10 @@ confirmButton.addEventListener('click', () => {
 });
 
 window.addEventListener("load", function (event) {
-    let url = 'http://localhost:8888/api/auto'
-    let url2= 'http://localhost:8888/api/loca'
-    let url3= 'http://localhost:8888/api/calle'
-    let url4= 'http://localhost:8888/api/problema'
+    let url = 'https://solvenow.onrender.com/api/auto'
+    let url2= 'https://solvenow.onrender.com/api/loca'
+    let url3= 'https://solvenow.onrender.com/api/calle'
+    let url4= 'https://solvenow.onrender.com/api/problema'
     fetch(url, {
         method: "GET",
         headers: {
@@ -294,9 +294,9 @@ filtro.addEventListener('click', function () {
     if (ni3.checked) {
         ni.push(ni3.value)
     }
-    let url = 'http://localhost:8888/api/auto'
-    let url2 = 'http://localhost:8888/api/loca'
-    let url3 = 'http://localhost:8888/api/calle'
+    let url = 'https://solvenow.onrender.com/api/auto'
+    let url2 = 'https://solvenow.onrender.com/api/loca'
+    let url3 = 'https://solvenow.onrender.com/api/calle'
 
     fetch(url, {
         method: "GET",
@@ -364,10 +364,10 @@ filtro.addEventListener('click', function () {
                                     'Content-Type': 'application/json'
                                 }
                             }).then(response => response.json()).then(data => {
-                                let url4 = 'http://localhost:8888/api/loca';
-                                let url5 = 'http://localhost:8888/api/auto';
-                                  url3 = 'http://localhost:8888/api/calle';
-                                  url2 = 'http://localhost:8888/api/problema';
+                                let url4 = 'https://solvenow.onrender.com/api/loca';
+                                let url5 = 'https://solvenow.onrender.com/api/auto';
+                                  url3 = 'https://solvenow.onrender.com/api/calle';
+                                  url2 = 'https://solvenow.onrender.com/api/problema';
                                 let conte = data;
 
                                 let padre = document.getElementById('contenedor');
@@ -521,7 +521,7 @@ div2.appendChild(img);
 div2.appendChild(p);
 div2.appendChild(p2);
  div1.addEventListener('click', function (e) {
-            window.location = "http://localhost:8888/problema?"+conte.id;
+            window.location = "https://solvenow.onrender.com/problema?"+conte.id;
         });
 
 

@@ -2,7 +2,7 @@
 
 const back = document.getElementById('back');
 back.addEventListener('click', () => {
-window.location.href = "http://localhost:8888/";
+window.location.href = "https://solvenow.onrender.com/";
 });
 
 const formu = document.querySelector('form');
@@ -61,7 +61,7 @@ document.getElementById("error").textContent = "La contraseña y recontraseña d
                 if(bool==true){
 const data1 = { "nombre": name, "email":mail,"password": password };
 
-    let url = "http://localhost:8888/api/registro";
+    let url = "https://solvenow.onrender.com/api/registro";
 
         fetch(url, {
             method: "POST",
