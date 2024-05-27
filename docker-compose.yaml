@@ -1,0 +1,10 @@
+version: '3'
+services:
+  
+  spring-boot-app:
+    build: .
+    ports:
+      - "8888:8888"
+    environment:
+      - SERVER_PORT=8888
+      - CORS_ALLOWED_ORIGINS=*
