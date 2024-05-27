@@ -21,6 +21,7 @@ import java.nio.file.Paths;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://35.180.138.214:8888")
 public class SubeController {
     private static final Logger log =
             LoggerFactory.getLogger(SubeController.class);

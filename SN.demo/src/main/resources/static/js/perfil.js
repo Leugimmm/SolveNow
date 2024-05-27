@@ -1,7 +1,7 @@
 const sube2 = document.getElementById('index');
 
 sube2.addEventListener('click', () => {
-window.location.href = "https://solvenow.onrender.com/";
+window.location.href = "http://35.180.138.214:8888/";
 });
 
 if (JSON.parse(localStorage.getItem('usuario1')) !== null) {
@@ -12,7 +12,7 @@ if (JSON.parse(localStorage.getItem('usuario1')) !== null) {
 
 
 } else {
-             window.location.href = 'https://solvenow.onrender.com/';
+             window.location.href = 'http://35.180.138.214:8888/';
     // El localStorage no existe o no tiene un valor para la clave 'miClave'
     console.log('El localStorage no tiene un valor para la clave "miClave".');
 }
@@ -50,8 +50,8 @@ em.value=data.email;
 pass.value=data.password;
 
 
-let url = 'https://solvenow.onrender.com/api/auto'
-    let url2= 'https://solvenow.onrender.com/api/loca'
+let url = 'http://35.180.138.214:8888/api/auto'
+    let url2= 'http://35.180.138.214:8888/api/loca'
 
         fetch(url, {
             method: "GET",
@@ -233,10 +233,10 @@ ul.appendChild(nuevoLi);
        let pass = document.getElementById('pass');
        let comu = document.getElementById('comu');
        let loca = document.getElementById('loca');
-       let url3 = "https://solvenow.onrender.com/api/cambio";
+       let url3 = "http://35.180.138.214:8888/api/cambio";
 
-       let url = 'https://solvenow.onrender.com/api/auto'
-       let url2 = 'https://solvenow.onrender.com/api/loca'
+       let url = 'http://35.180.138.214:8888/api/auto'
+       let url2 = 'http://35.180.138.214:8888/api/loca'
 
        fetch(url, {
            method: "GET",

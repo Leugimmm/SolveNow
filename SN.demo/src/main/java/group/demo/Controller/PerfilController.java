@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 @RestController
+@CrossOrigin(origins = "http://35.180.138.214:8888")
 public class PerfilController {
     private static final Logger log =
             LoggerFactory.getLogger(PerfilController.class);

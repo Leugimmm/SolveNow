@@ -17,6 +17,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/")
+@CrossOrigin(origins = "http://35.180.138.214:8888")
 public class IndexController {
     private static final Logger log =
             LoggerFactory.getLogger(IndexController.class);
