@@ -1,7 +1,7 @@
 const sube2 = document.getElementById('index');
 
 sube2.addEventListener('click', () => {
-window.location.href = "https://solvenow.onrender.com/";
+window.location.href = "http://35.180.138.214:8888/";
 });
 let valorAlmacenado = JSON.parse(localStorage.getItem('usuario1'));;
 if (JSON.parse(localStorage.getItem('usuario1')) !== null) {
@@ -12,15 +12,15 @@ if (JSON.parse(localStorage.getItem('usuario1')) !== null) {
 
 
 } else {
-             window.location.href = 'https://solvenow.onrender.com/';
+             window.location.href = 'http://35.180.138.214:8888/';
     // El localStorage no existe o no tiene un valor para la clave 'miClave'
     console.log('El localStorage no tiene un valor para la clave "miClave".');
 }
 window.addEventListener("load", function (event) {
-    let url = 'https://solvenow.onrender.com/api/auto'
-    let url2= 'https://solvenow.onrender.com/api/loca'
-    let url3= 'https://solvenow.onrender.com/api/calle'
-    let url4= 'https://solvenow.onrender.com/api/problema'
+    let url = 'http://35.180.138.214:8888/api/auto'
+    let url2= 'http://35.180.138.214:8888/api/loca'
+    let url3= 'http://35.180.138.214:8888/api/calle'
+    let url4= 'http://35.180.138.214:8888/api/problema'
     fetch(url, {
         method: "GET",
         headers: {
@@ -332,12 +332,12 @@ formu.addEventListener('submit', e => {
     let problema = document.getElementById('validationServer05');
 
     console.log(descripcion.value);
-    let url = 'https://solvenow.onrender.com/api/auto'
-    let url2 = 'https://solvenow.onrender.com/api/loca'
-    let url3 = 'https://solvenow.onrender.com/api/calle'
-    let url4 = 'https://solvenow.onrender.com/api/problema'
-    let url5 = 'https://solvenow.onrender.com/api/sube'
-    let url6= 'https://solvenow.onrender.com/upload';
+    let url = 'http://35.180.138.214:8888/api/auto'
+    let url2 = 'http://35.180.138.214:8888/api/loca'
+    let url3 = 'http://35.180.138.214:8888/api/calle'
+    let url4 = 'http://35.180.138.214:8888/api/problema'
+    let url5 = 'http://35.180.138.214:8888/api/sube'
+    let url6= 'http://35.180.138.214:8888/upload';
 
     fetch(url, {
         method: "GET",
@@ -451,7 +451,7 @@ formu.addEventListener('submit', e => {
                                                   timer: 2000 // Muestra el mensaje durante 2 segundos
                                                 }).then(() => {
                                                   // Redirige a la URL después de que termine el tiempo
-                                                  window.location.href = 'http://localhost:8888'; // Reemplaza 'URL_DEL_SITIO' con la URL a la que deseas redirigir
+                                                  window.location.href = 'http://35.180.138.214:8888'; // Reemplaza 'URL_DEL_SITIO' con la URL a la que deseas redirigir
                                                 });
                                             })
 

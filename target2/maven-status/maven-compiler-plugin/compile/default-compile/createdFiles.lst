@@ -15,6 +15,7 @@ group\demo\Service\ProblemasServiceImpl.class
 group\demo\Service\c_AutonomaServiceImpl.class
 group\demo\Service\CallesServiceImpl.class
 group\demo\Repository\PostRepository.class
+group\demo\CorsConfig.class
 group\demo\DTO\UsuariosDTO.class
 group\demo\Entity\ProblemasEntity.class
 group\demo\DTO\c_AutonomaDTO.class

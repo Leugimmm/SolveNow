@@ -1,16 +1,16 @@
 const sube2 = document.getElementById('index');
 
 sube2.addEventListener('click', () => {
-window.location.href = "https://solvenow.onrender.com/";
+window.location.href = "http://35.180.138.214:8888/";
 });
 
 window.addEventListener("load", function (event)  {
  let url = window.location.toString();
   url = url.replace("?", "/");
-    let url4 = 'https://solvenow.onrender.com/api/loca';
-      let url3 = 'https://solvenow.onrender.com/api/calle';
-      let url2 = 'https://solvenow.onrender.com/problema';
-      let url5 = 'https://solvenow.onrender.com/api/auto';
+    let url4 = 'http://35.180.138.214:8888/api/loca';
+      let url3 = 'http://35.180.138.214:8888/api/calle';
+      let url2 = 'http://35.180.138.214:8888/problema';
+      let url5 = 'http://35.180.138.214:8888/api/auto';
  // Concatena el dato como parámetro en la URL
  fetch(url, {
      method: "GET",
