@@ -45,20 +45,5 @@ public class RegistroController {
         usuariosService.save(usuariosDTO);
         return true;
     }
-    @PostMapping("/api/cambio")
-    public boolean camUsuario (@RequestBody UsuariosDTO usuariosDTO){
-        log.info(String.valueOf(usuariosDTO));
-        if (!usuariosDTO.getEmail().matches("^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$")){
-            return false;
-        }
-        if (!usuariosDTO.getPassword().matches("^(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{5,10}$)")){
-            return false;
-        }
-        if (usuariosDTO.getNombre().matches("")){
-            return false;
-        }
 
-        usuariosService.save(usuariosDTO);
-        return true;
-    }
 }

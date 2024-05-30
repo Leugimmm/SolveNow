@@ -1,6 +1,17 @@
 const filterButton = document.getElementById('filterButton');
 const filterOverlay = document.getElementById('filterOverlay');
 const confirmButton = document.getElementById('confirmButton');
+let Checked = null;
+//The class name can vary
+for (let CheckBox of document.getElementsByClassName('only-one')){
+	CheckBox.onclick = function(){
+  	if(Checked!=null){
+      Checked.checked = false;
+      Checked = CheckBox;
+    }
+    Checked = CheckBox;
+  }
+}
 
 filterButton.addEventListener('click', () => {
   filterOverlay.style.display = 'block';
@@ -266,9 +277,15 @@ filtro.addEventListener('click', function () {
     let pro2 = document.getElementsByName('Desastre urbano')[0];
     let pro3 = document.getElementsByName('Problema de infraestructura')[0];
     let pro4 = document.getElementsByName('Mejora')[0];
+
     let ni1 = document.getElementsByName('1')[0];
     let ni2 = document.getElementsByName('2')[0];
     let ni3 = document.getElementsByName('3')[0];
+
+    let sol = document.getElementsByName('sol')[0];
+        let sol2 = document.getElementsByName('sol2')[0];
+
+        let sol3;
 
     let pro = [];
     let ni = [];
@@ -294,6 +311,12 @@ filtro.addEventListener('click', function () {
     if (ni3.checked) {
         ni.push(ni3.value)
     }
+      if (sol.checked) {
+            sol3=sol.value;
+        }
+        if (sol2.checked) {
+            sol3=sol2.value;
+        }
     let url = 'http://localhost:8888/api/auto'
     let url2 = 'http://localhost:8888/api/loca'
     let url3 = 'http://localhost:8888/api/calle'
@@ -354,7 +377,8 @@ filtro.addEventListener('click', function () {
                                 lo: local,
                                 ca: cal,
                                 p: pro,
-                                n: ni
+                                n: ni,
+                                s:sol3
                             }
                             console.log(body);
                             fetch("http://localhost:8888/explorar/filtro", {
@@ -374,15 +398,7 @@ filtro.addEventListener('click', function () {
 
                                 padre.innerHTML = "";
 
-                                let nav = document.createElement('nav');
-                                let butt = document.createElement('button');
-                                let butt2 = document.createElement('button');
-                                butt.textContent = 'Problemas por soluciones';
-                                butt2.textContent = 'Problemas solucionados';
 
-                                padre.appendChild(nav);
-                                nav.appendChild(butt);
-                                nav.appendChild(butt2)
 
                                 for (let i = 0; i < conte.length; i++) {
                                 fetch(url2, {
@@ -508,6 +524,7 @@ p.textContent=pro;
 p2.textContent=au+', '+loca+', '+ca;
 
 padre.appendChild(div1);
+
 if(conte.NIVEL==1){
 div1.style.backgroundColor = 'green';
 }else if(conte.NIVEL==2){

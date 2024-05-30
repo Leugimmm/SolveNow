@@ -58,6 +58,7 @@ window.location.href = "http://localhost:8888";
 
 
 
+
 window.addEventListener("load", function (event) {
 
     let url = 'http://localhost:8888/api/post';
@@ -162,10 +163,13 @@ window.addEventListener("load", function (event) {
             })
 })
 
+
+
 function index(conte,pro,ca,loca,au){
 
 
 let padre = document.getElementById('contenedor');
+
 
 let div1 = document.createElement('div');
 let div2 = document.createElement('div');
@@ -200,3 +204,5 @@ div2.appendChild(p2);
 
 
 }
+
+

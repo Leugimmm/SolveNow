@@ -9,4 +9,5 @@ public interface UsuariosService {
     UsuariosDTO findById(UsuariosDTO usuariosDTO);
     void save(UsuariosDTO usuariosDTO);
     UsuariosDTO findUsuario( String correo ,  String password);
+    public void delete(UsuariosDTO usuariosDTO);
 }

@@ -73,6 +73,7 @@ public class SubeController {
         } else if (postDTO.getId_problema()==4) {
             postDTO.setNivel(1);
         }
+        postDTO.setSolucionado("0");
         postService.save(postDTO);
 
         return true;
@@ -110,5 +111,10 @@ public class SubeController {
             e.printStackTrace();
             return ResponseEntity.badRequest().build();
         }
+    }
+    @PostMapping("/api/deletePo")
+    public boolean delete (@RequestBody PostDTO postDTO){
+        postService.delete(postDTO);
+        return true;
     }
 }

@@ -35,7 +35,7 @@ public class PerfilController {
     // Actualizacion de clientes
     @PutMapping("/update/usu")
     public boolean update(@RequestBody UsuariosDTO usuariosDTO) {
-        log.info("ClienteRestController - update: Modificamos el cliente: " + usuariosDTO.getId());
+        log.info("ClienteRestController - update: Modificamos el cliente: " + usuariosDTO);
         // Obtenemos el cliente para verificar que existe
         UsuariosDTO clienteExDTO = new UsuariosDTO();
         clienteExDTO.setId(usuariosDTO.getId());
@@ -43,6 +43,10 @@ public class PerfilController {
         if(clienteExDTO == null) {
             return false; }
         else {
+if(usuariosDTO.getFoto()==null){
+    usuariosDTO.setFoto(clienteExDTO.getFoto());
+}
+
             usuariosService.save(usuariosDTO);
             return true; }
 

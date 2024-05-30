@@ -1,5 +1,6 @@
 package group.demo.Service;
 
+import group.demo.DTO.PostDTO;
 import group.demo.DTO.UsuariosDTO;
 import group.demo.Entity.UsuariosEntity;
 import group.demo.Repository.UsuarioRepository;
@@ -61,6 +62,11 @@ public class UsuariosServiceImpl implements UsuariosService{
             return null;
         UsuariosDTO usuariosDTO = UsuariosDTO.ConvertToDTO(usuariosEntity);
         return usuariosDTO;
+    }
+    @Override
+    public void delete(UsuariosDTO usuariosDTO) {
+        log.info("CuentaServiceImpl - delete: Metodo 1: borramos la cuenta: " + usuariosDTO.toString());
+        usuariosRepository.deleteById(usuariosDTO.getId());
     }
 
 }

@@ -44,10 +44,25 @@ let ape=document.getElementById('ape');
 let pass=document.getElementById('pass');
 let comu=document.getElementById('comu');
 let loca=document.getElementById('loca');
+let img = document.getElementById('fotomostrar');
+
+let imgdata="./imagenes/"+data.foto;
+img.setAttribute('src',imgdata);
 
 no.value=data.nombre;
 em.value=data.email;
 pass.value=data.password;
+let pa=document.querySelector('form');
+if(data.rol=='A'){
+let bu=document.createElement('button');
+    bu.id='bot';
+    bu.className='btn btn-primary';
+        bu.textContent='Panel de Admin';
+        pa.appendChild(bu)
+        bu.addEventListener('click',function(){
+                window.location.href="http://localhost:8888/admin";
+                });
+}
 
 
 let url = 'http://localhost:8888/api/auto'
@@ -233,7 +248,7 @@ ul.appendChild(nuevoLi);
        let pass = document.getElementById('pass');
        let comu = document.getElementById('comu');
        let loca = document.getElementById('loca');
-       let url3 = "http://localhost:8888/api/cambio";
+       let url3 = "http://localhost:8888/update/usu";
 
        let url = 'http://localhost:8888/api/auto'
        let url2 = 'http://localhost:8888/api/loca'
@@ -275,18 +290,67 @@ ul.appendChild(nuevoLi);
                            }
 
                        }
-                       const data1 = { "id": valorAlmacenado.id, "nombre": no.value, "email": em.value, "password": pass.value, "descripcion": ape.value,"id_Autonoma":comuna ,"id_Localidad":local,"rol":valorAlmacenado.rol};
+                        let fileInput = document.getElementById('foto');
+                            let file = fileInput.files[0];
+                            let data1=0;
+                            let renamedFile;
+                            if (!fileInput.files || fileInput.files.length === 0) {
+                                    data1 = { "id": valorAlmacenado.id, "nombre": no.value,"email": em.value, "password": pass.value, "descripcion": ape.value,"id_Autonoma":comuna ,"id_Localidad":local,"rol":valorAlmacenado.rol};
+                                }else{
+                                const file = fileInput.files[0];
+                                let newFileName = generarNumeroAleatorioDe10Digitos() + file.name;
+                                renamedFile = new File([file], newFileName, { type: file.type });
+                                 data1 = { "id": valorAlmacenado.id, "nombre": no.value,"foto":newFileName ,"email": em.value, "password": pass.value, "descripcion": ape.value,"id_Autonoma":comuna ,"id_Localidad":local,"rol":valorAlmacenado.rol};
+                                }
+
+
+
+
+
+
+
 
 
                        fetch(url3, {
-                           method: "POST",
+                           method: "PUT",
                            headers: {
                                "Content-Type": "application/json"
                            },
                            body: JSON.stringify(data1)
                        })
                            .then(response => response.json())
-                           .then(data => console.log(JSON.stringify(data)))
+                           .then(data => {
+                           if (!fileInput.files || fileInput.files.length === 0) {
+
+                               }else{
+                               let url6= 'http://localhost:8888/upload';
+                               const formData = new FormData();
+                                                                                                      formData.append('file', renamedFile);
+
+                                                                                                      fetch(url6, {
+                                                                                                          method: 'POST',
+                                                                                                          body: formData, // Usar el objeto FormData para enviar el archivo
+                                                                                                      })
+                                                                                                      .then(response => response.text())
+                                                                                                      .then(data => {
+                                                                                                          console.log(data);
+
+
+                                                                                                          Swal.fire({
+                                                                                                            title: 'Perfil Actualizado',
+                                                                                                            icon: 'success',
+                                                                                                            showConfirmButton: false,
+                                                                                                            timer: 2000 // Muestra el mensaje durante 2 segundos
+                                                                                                          }).then(() => {
+                                                                                                            // Redirige a la URL después de que termine el tiempo
+                                                                                                            window.location.href = 'http://localhost:8888'; // Reemplaza 'URL_DEL_SITIO' con la URL a la que deseas redirigir
+                                                                                                          });
+                                                                                                      })
+                               }
+
+
+
+                           })
 
                    })
            })
@@ -294,6 +358,25 @@ ul.appendChild(nuevoLi);
 
 
    });
+
+   function generarNumeroAleatorioDe10Digitos() {
+       const min = 1000000000; // 10^9
+       const max = 9999999999; // 10^10 - 1
+       const numeroAleatorio = Math.floor(Math.random() * (max - min + 1)) + min;
+       return numeroAleatorio;
+   }
+   const foto = document.getElementById('foto');
+   const fotover = document.getElementById('fotomostrar')
+
+   foto.addEventListener('change', function () {
+       let archivo = this.files[0];
+       if (archivo.type.match('image.*')) {
+           let tmp = URL.createObjectURL(archivo);
+           fotover.setAttribute('src', tmp);
+       } else {
+           alert('No es un archivo')
+       }
+   })
 
 
 

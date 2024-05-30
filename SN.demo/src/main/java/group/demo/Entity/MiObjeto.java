@@ -6,6 +6,16 @@ public class MiObjeto {
     private int comun;
     private int lo;
     private int  ca;
+    private String  s;
+
+    public String getS() {
+        return s;
+    }
+
+    public void setS(String s) {
+        this.s = s;
+    }
+
     private List<Integer> p;
     private List<Integer> n;
 

@@ -82,7 +82,7 @@ public class PostServiceImpl implements PostService{
 
             log.info("uscando por filtro" +miObjeto.getN());
 
-            List<PostDTO> listaPosDTO = postRepository.filtrado(miObjeto.getComun(), miObjeto.getLo(),miObjeto.getCa(),miObjeto.getP(),miObjeto.getN())
+            List<PostDTO> listaPosDTO = postRepository.filtrado(miObjeto.getComun(), miObjeto.getLo(),miObjeto.getCa(),miObjeto.getP(),miObjeto.getN(),miObjeto.getS())
                     .stream()
                     .map(p -> PostDTO.ConvertToDTO(p))
                     .collect(Collectors.toList());
@@ -93,5 +93,17 @@ public class PostServiceImpl implements PostService{
             e.printStackTrace();
         }
         return null;
+    }
+    @Override
+    public void update(PostDTO postDTO) {
+        log.info("ClienteServiceImpl - save: Salvamos el cliente: " +
+                postDTO.toString());
+
+        postRepository.update(postDTO.getSolucionado(),postDTO.getId());
+    }
+    @Override
+    public void delete(PostDTO postDTO) {
+        log.info("CuentaServiceImpl - delete: Metodo 1: borramos la cuenta: " + postDTO.toString());
+        postRepository.deleteById(postDTO.getId());
     }
 }

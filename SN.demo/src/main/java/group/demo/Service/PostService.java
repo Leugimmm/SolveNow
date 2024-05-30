@@ -10,4 +10,6 @@ public interface PostService {
     PostDTO findById(PostDTO postDTO);
     void save(PostDTO postDTO);
     List<PostDTO> filtrado(String respuesta);
+    public void update(PostDTO postDTO);
+    public void delete(PostDTO postDTO);
 }

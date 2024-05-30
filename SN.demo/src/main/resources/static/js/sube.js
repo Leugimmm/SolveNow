@@ -413,9 +413,14 @@ formu.addEventListener('submit', e => {
                                     console.log(comuna);
                                       const fileInput = document.getElementById('foto');
                                      const file = fileInput.files[0];
-                                     console.log(file.name);
+                                     const newFileName = generarNumeroAleatorioDe10Digitos() + file.name; // Cambia esto según tus necesidades
 
-                                    let  data2 = { "id_Calle": cal, "id_problema": pro,"descripcion":descripcion.value,"foto":file.name,"id_Autonoma":comuna,"id_localidad":local,"id_Usuario":valorAlmacenado.id};
+                                         // Crear un nuevo archivo con el mismo contenido pero con el nuevo nombre
+                                         const renamedFile = new File([file], newFileName, { type: file.type });
+
+                                     console.log(renamedFile.name);
+
+                                    let  data2 = { "id_Calle": cal, "id_problema": pro,"descripcion":descripcion.value,"foto":newFileName,"id_Autonoma":comuna,"id_localidad":local,"id_Usuario":valorAlmacenado.id};
                                     console.log(data2);
                                      fetch(url5, {
                                             method: "POST",
@@ -433,7 +438,7 @@ formu.addEventListener('submit', e => {
 
                                             // Crear un objeto FormData y agregar el archivo
                                             const formData = new FormData();
-                                            formData.append('file', file);
+                                            formData.append('file', renamedFile);
 
                                             fetch(url6, {
                                                 method: 'POST',
@@ -468,3 +473,9 @@ formu.addEventListener('submit', e => {
 
 })
 
+function generarNumeroAleatorioDe10Digitos() {
+    const min = 1000000000; // 10^9
+    const max = 9999999999; // 10^10 - 1
+    const numeroAleatorio = Math.floor(Math.random() * (max - min + 1)) + min;
+    return numeroAleatorio;
+}
