@@ -1,0 +1,86 @@
+body{
+    height: 100%;
+}
+  
+  #confirmButton {
+    display: block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+main>div{
+display: flex;
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 95%;
+    height: 97%;
+    background-color: rgba(255, 255, 255, 0.89);
+    border-radius: 5px;
+    overflow-x: auto;
+    min-height: 809px;
+    align-items: center;
+    flex-direction: column;
+}
+
+main>div>h2{
+    color: black;
+}
+
+main>div>#table{
+display:flex;
+    margin-top: 20px;
+
+   height: 650px;
+   width: 95%;
+justify-content: center;
+   overflow-y: auto;
+
+}
+table {
+  border-collapse: collapse;
+  width: 90%;
+  margin: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  min-height:64px;
+}
+
+th {
+  background-color: #007bff;
+  color: #fff;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #f0f0f0;
+}
+
+#sep{
+display:flex;
+flex-direction: row-reverse;
+}
+#sep>button{
+margin-left:20px;
+
+}
+#ta{
+height:0px;
+}
+
+

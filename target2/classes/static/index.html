@@ -60,6 +60,16 @@
               <h3 >Problema</h3>
 
           </div>
+            <h3 >Estado</h3>
+            <div class="row">
+
+                <div class="col-lg-5">
+                    <input type="checkbox" name="sol"  id="checkGrado" value="1"  class="only-one">Solucionado
+                </div>
+                <div class="col-lg-5">
+                    <input type="checkbox" name="sol2"  id="checkResumen" value="0"  class="only-one"> Por Solucionar
+                </div>
+            </div>
 
           
           <button id="confirmButton">Confirmar filtro</button>
@@ -102,8 +112,8 @@
                 </button>
 
                 <div id="profileDropdown" class="profile-dropdown-content  mostrar">
-                    <a href="http://35.180.138.214:8888/login" class="a" id="ini">Inicio de sesion</a>
-                    <a href="http://35.180.138.214:8888/regi" class="a" id="regi">Registrarse</a>
+                    <a href="http://solucionaya.es/login" class="a" id="ini">Inicio de sesion</a>
+                    <a href="http://solucionaya.es/regi" class="a" id="regi">Registrarse</a>
                 </div>
 
             </div>
@@ -113,11 +123,38 @@
     </header>
     <main>
 <div id="contenedor">
-    <nav><button>Problemas por soluciones</button>
-    <button>Problemas solucionados</button></nav>
+
 
 
 </div>
+        <button id="alertButton" class="alert-button">&#9888;</button>
+
+        <aside id="modal" class="modal">
+            <div class="modal-content">
+                <span id="closeModal" class="close-button">&times;</span>
+                <h2>Guía de Niveles de Problemas</h2>
+                <p>Esto es una guia diseñada para aclarar que quieren decir los colores de los bordes de los tikets.
+                    Los colores se refieren a un orden de importancia por la clase de problema que es, que quiere
+                    decir pues que los problemas mas graves tendran un nivel mas alto de importancia para su solucion.
+                    Y esta agrupado en 3 niveles.
+                </p>
+                <div class="level">
+                    <p>Nivel 1: Flojo</p>
+                    <div class="color-line" style="background-color: green;"></div>
+                    <p>Verde</p>
+                </div>
+                <div class="level">
+                    <p>Nivel 2: Mediano </p>
+                    <div class="color-line" style="background-color: yellow;"></div>
+                    <p>Amarillo</p>
+                </div>
+                <div class="level">
+                    <p>Nivel 3: Grave</p>
+                    <div class="color-line" style="background-color: red;"></div>
+                    <p>Rojo</p>
+                </div>
+            </div>
+        </aside>
 
     </main>
     <footer>
@@ -151,6 +188,7 @@
 
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/info.js"></script>
     <script src="js/header.js"></script>
     <script src="js/filtro.js"></script>
     <script src="js/index.js"></script>

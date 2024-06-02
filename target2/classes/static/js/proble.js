@@ -1,16 +1,144 @@
 const sube2 = document.getElementById('index');
 
 sube2.addEventListener('click', () => {
-window.location.href = "http://35.180.138.214:8888/";
+window.location.href = "http://solucionaya.es/";
 });
+if (JSON.parse(localStorage.getItem('usuario1')) !== null) {
+
+    // El localStorage existe, puedes realizar acciones adicionales aquí
+    var valorAlmacenado = JSON.parse(localStorage.getItem('usuario1'));
+    console.log('El valor almacenado es: ', valorAlmacenado);
+    let pa=document.getElementById('conte');
+
+    if(valorAlmacenado.rol=='AJ'){
+    let bu=document.createElement('button');
+    bu.id='bot';
+    bu.className='btn btn-primary';
+    bu.textContent='Solucionar';
+    pa.appendChild(bu)
+    let url = window.location.toString();
+      url = url.replace("?", "/");
+      fetch(url, {
+           method: "GET",
+           headers: {
+               "Content-Type": "application/json"
+           }
+       })
+           .then(response => response.json())
+           .then(data => {
+                            let conte = data;
+                            console.log(conte);
+                            if(conte.solucionado=="1"){
+
+
+                            bu.remove();
+
+                            let p=document.createElement('p');
+                            p.textContent='Problema Solucionado';
+                                    pa.appendChild(p)
+
+
+                            }else{
+                             bu.addEventListener('click',function(){
+                                let  data2 = { "id": conte.id, "solucionado": '1' };
+                                fetch("http://solucionaya.es/api/update",
+                                        {
+                                            method: "POST",
+                                            headers: {
+                                                "Content-Type": "application/json"
+                                            },
+                                            body: JSON.stringify(data2)
+                                        }).then(response => response.json())
+                                        .then(data => {
+                                       Swal.fire({
+                                                                                         title: 'Post solucionado',
+                                                                                         icon: 'success',
+                                                                                         showConfirmButton: false,
+                                                                                         timer: 2000 // Muestra el mensaje durante 2 segundos
+                                                                                       }).then(() => {
+                                                                                         // Redirige a la URL después de que termine el tiempo
+                                                                                         window.location.href = 'http://solucionaya.es/'; // Reemplaza 'URL_DEL_SITIO' con la URL a la que deseas redirigir
+                                                                                       });
+                                        })
+
+                                })
+                            }
+                            })
+
+    //addEVent de bu
+    }
+    if(valorAlmacenado.rol=='A'){
+    let bu=document.createElement('button');
+    bu.id='bot';
+    bu.className='btn btn-primary';
+        bu.textContent='Solucionar';
+        pa.appendChild(bu)
+        let url = window.location.toString();
+              url = url.replace("?", "/");
+              fetch(url, {
+                   method: "GET",
+                   headers: {
+                       "Content-Type": "application/json"
+                   }
+               })
+                   .then(response => response.json())
+                   .then(data => {
+                                    let conte = data;
+                                    console.log(conte);
+                                    if(conte.solucionado=="1"){
+
+
+                                    bu.remove();
+
+                                    let p=document.createElement('p');
+                                    p.textContent='Problema Solucionado';
+                                            pa.appendChild(p)
+
+
+                                    }else{
+                                     bu.addEventListener('click',function(){
+                                        let  data2 = { "id": conte.id, "solucionado": '1' };
+                                        fetch("http://solucionaya.es/api/update",
+                                                {
+                                                    method: "POST",
+                                                    headers: {
+                                                        "Content-Type": "application/json"
+                                                    },
+                                                    body: JSON.stringify(data2)
+                                                }).then(response => response.json())
+                                                .then(data => {
+                                               Swal.fire({
+                                                                                                 title: 'Post solucionado',
+                                                                                                 icon: 'success',
+                                                                                                 showConfirmButton: false,
+                                                                                                 timer: 2000 // Muestra el mensaje durante 2 segundos
+                                                                                               }).then(() => {
+                                                                                                 // Redirige a la URL después de que termine el tiempo
+                                                                                                 window.location.href = 'http://solucionaya.es/'; // Reemplaza 'URL_DEL_SITIO' con la URL a la que deseas redirigir
+                                                                                               });
+                                                })
+
+                                        })
+                                    }
+                                    })
+    }
+
+
+} else {
+
+    // El localStorage no existe o no tiene un valor para la clave 'miClave'
+    console.log('El localStorage no tiene un valor para la clave "miClave".');
+}
+
 
 window.addEventListener("load", function (event)  {
  let url = window.location.toString();
   url = url.replace("?", "/");
-    let url4 = 'http://35.180.138.214:8888/api/loca';
-      let url3 = 'http://35.180.138.214:8888/api/calle';
-      let url2 = 'http://35.180.138.214:8888/problema';
-      let url5 = 'http://35.180.138.214:8888/api/auto';
+  console.log(url);
+    let url4 = 'http://solucionaya.es/api/loca';
+      let url3 = 'http://solucionaya.es/api/calle';
+      let url2 = 'http://solucionaya.es/api/problema';
+      let url5 = 'http://solucionaya.es/api/auto';
  // Concatena el dato como parámetro en la URL
  fetch(url, {
      method: "GET",
@@ -22,6 +150,7 @@ window.addEventListener("load", function (event)  {
      .then(data => {
                       let conte = data;
                       console.log(conte);
+
 
                           fetch(url2, {
                               method: "GET",
@@ -124,5 +253,6 @@ img.src="./imagenes/"+conte.foto;
 lu.value=au+', '+local+', '+ca;
 
 niv.value=conte.nivel;
+
 
 }

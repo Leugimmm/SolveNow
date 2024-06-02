@@ -26,6 +26,7 @@ group\demo\Controller\SubeController.class
 group\demo\Service\PostService.class
 group\demo\Service\LocalidadServiceImpl.class
 group\demo\Entity\LocalidadEntity.class
+group\demo\Controller\AdminController.class
 group\demo\DTO\CallesDTO.class
 group\demo\Service\PostServiceImpl.class
 group\demo\Controller\LoginController.class

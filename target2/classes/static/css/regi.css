@@ -8,12 +8,46 @@ main{
     height: 100vh;
     position: relative;
 }
+#user{
+background-color: rgba(21, 8, 100, 0.40);
 
+}
+#email{
+background-color: rgba(21, 8, 100, 0.40);
 
+}
+#loca{
+background-color: rgba(21, 8, 100, 0.40);
+
+}
+#comu{
+background-color: rgba(21, 8, 100, 0.40);
+}
+
+#pass{
+background-color: rgba(21, 8, 100, 0.40);
+
+}
+#repass{
+background-color: rgba(21, 8, 100, 0.40);
+
+}
+body > main > div.login-container > div > form > div:nth-child(7) > div > span{
+background-color: rgba(21, 8, 100, 0.89);
+}
+body > main > div.login-container > div > form > div:nth-child(9) > div > span{
+background-color: rgba(21, 8, 100, 0.89);
+}
+body > main > div.login-container > div > form > div:nth-child(11) > div > span{
+background-color: rgba(21, 8, 100, 0.89);
+}
+body > main > div.login-container > div > form > div:nth-child(13) > div > span{
+background-color: rgba(21, 8, 100, 0.89);
+}
 .login-container {
     position: relative;
     width: 60%;
-    height: 48%;
+    height: 60%;
 background-color: rgba(255, 255, 255, 0.89);
 margin: 0 auto;
 margin-top: 200px;
@@ -37,7 +71,7 @@ body > main > div.login-container > div > form > div:nth-child(3) > div > span{
   background-color: rgba(21, 8, 100, 0.89);
 }
 
-body > main > div.login-container > div > form > div:nth-child(2) > div>span{
+body > main > div.login-container > div > form > div:nth-child(5) > div>span{
   background-color: rgba(21, 8, 100, 0.89);
 }
 body > main > div.login-container > div > form > div:nth-child(2){
@@ -46,7 +80,7 @@ body > main > div.login-container > div > form > div:nth-child(2){
 
 }
 
-body > main > div.login-container > div > form > div:nth-child(2) > input::-webkit-input-placeholder {
+body > main > div.login-container > div > form > div:nth-child(3) > input::-webkit-input-placeholder {
   color: white;
   opacity:  1;
 }
@@ -57,7 +91,23 @@ body > main > div.login-container > div > form > div:nth-child(3){
 
 }
 
-body > main > div.login-container > div > form > div:nth-child(3) > input::-webkit-input-placeholder {
+body > main > div.login-container > div > form > div:nth-child(5) > input::-webkit-input-placeholder {
+  color: white;
+  opacity:  1;
+}
+body > main > div.login-container > div > form > div:nth-child(7) > input::-webkit-input-placeholder {
+  color: white;
+  opacity:  1;
+}
+body > main > div.login-container > div > form > div:nth-child(9) > input::-webkit-input-placeholder {
+  color: white;
+  opacity:  1;
+}
+body > main > div.login-container > div > form > div:nth-child(11) > input::-webkit-input-placeholder {
+  color: white;
+  opacity:  1;
+}
+body > main > div.login-container > div > form > div:nth-child(13) > input::-webkit-input-placeholder {
   color: white;
   opacity:  1;
 }
@@ -65,6 +115,7 @@ form{
     display: flex;
     height: 100%;
     flex-direction: column;
+    overflow-x:auto;
 }
 #ex1{
   margin-top: 20px;
@@ -162,6 +213,22 @@ margin-bottom: 20px;
     position: relative;
   }
 
+  .filtro{
+      display:none;
+  }
+
+  .conte{
+  margin-top:40px;
+      position: absolute;
+      width: 100%;
+      z-index: 1;
+      height: 300px;
+      overflow-y: auto;
+  }
+  #a1,#a2,#a3,#a4,#a5,#a6{
+  display:none;
+  }
+
   @media only screen and (max-width: 760px) {
    aside{
     display: none;
@@ -170,10 +237,10 @@ margin-bottom: 20px;
     width: 100%;
    }
    .login-container{
-    width: 75%;
+    width: 95%;
     height: 60%;
    }
    .circulo{
-    margin-left:38% ;
+    margin-left:30% ;
    }
   }

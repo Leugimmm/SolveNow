@@ -43,11 +43,14 @@ main>div{
 
     margin: 0 auto;
     margin-top: 10px;
-    width: 95%;
+    width: 90%;
     height: 97%;
     background-color: rgba(255, 255, 255, 0.89);
     border-radius: 5px;
     overflow-x: auto;
+    min-height: 809px;
+    display: flex;
+        flex-wrap: wrap;
 }
 
 main>div>nav{
@@ -63,7 +66,7 @@ main>div>div{
     margin-top: 10px;
     height: 250px;
     background-color: crimson;
-    width: 95%;
+    width: 45%;
     border-radius: 5px;
 
 }
@@ -104,3 +107,107 @@ main>div>div>div>img{
           height: 300px;
           overflow-y: auto;
       }
+
+ .alert-button {
+     position: fixed;
+     bottom: 20px;
+     left: 20px;
+     background-color: blue;
+     color: white;
+     border: none;
+     border-radius: 50%;
+     width: 50px;
+     height: 50px;
+     font-size: 24px;
+     cursor: pointer;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+     z-index: 1000; /* Ensure the button stays on top */
+ }
+
+ .modal {
+     display: none;
+     position: fixed;
+     z-index: 1;
+     left: 0;
+     top: 0;
+     width: 100%;
+     height: 100%;
+     overflow: auto;
+     background-color: rgba(0, 0, 0, 0.5);
+     justify-content: center;
+     align-items: center;
+ }
+
+ .modal-content {
+     background-color: white;
+     margin: auto;
+     padding: 20px;
+     border: 1px solid #888;
+     width: 80%;
+     max-width: 500px;
+     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+     position: relative;
+ }
+
+ .close-button {
+     color: #aaa;
+     float: right;
+     font-size: 28px;
+     font-weight: bold;
+ }
+
+ .close-button:hover,
+ .close-button:focus {
+     color: black;
+     text-decoration: none;
+     cursor: pointer;
+ }
+.modal-content>p{
+    color: black;
+}
+.level {
+    margin-top: 20px;
+}
+
+.color-line {
+    width: 100%;
+    height: 30px;
+    margin-bottom: 5px;
+}
+main p {
+    color: black;
+}
+main h2 {
+    color: black;
+}
+ @media only screen and (max-width: 660px) {
+    main>div{
+    flex-direction:column;
+    width:97%;
+    }
+    main>div>div{
+    width:95%;
+    height: 290px;
+    }
+    main>div>div>div{
+    height: 270px;
+    }
+
+     }
+      @media only screen and (max-width: 460px) {
+
+header{
+justify-content: flex-start;
+}
+       }
+
+          @media only screen and (max-width: 830px) {
+       main>div>div{
+
+           height: 290px;
+           }
+           main>div>div>div{
+           height: 270px;
+           }
+
+              }
