@@ -3,13 +3,11 @@ package group.demo.Controller;
 import group.demo.DTO.UsuariosDTO;
 import group.demo.Service.UsuariosService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 @RestController
+@CrossOrigin(origins = "http://solucionaya.es/")
 public class LoginController {
 
     @Autowired

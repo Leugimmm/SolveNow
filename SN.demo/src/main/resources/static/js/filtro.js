@@ -22,10 +22,10 @@ confirmButton.addEventListener('click', () => {
 });
 
 window.addEventListener("load", function (event) {
-    let url = 'http://localhost:8888/api/auto'
-    let url2= 'http://localhost:8888/api/loca'
-    let url3= 'http://localhost:8888/api/calle'
-    let url4= 'http://localhost:8888/api/problema'
+    let url = 'http://solucionaya.es/api/auto'
+    let url2= 'http://solucionaya.es/api/loca'
+    let url3= 'http://solucionaya.es/api/calle'
+    let url4= 'http://solucionaya.es/api/problema'
     fetch(url, {
         method: "GET",
         headers: {
@@ -269,6 +269,10 @@ document.getElementById('validationServer03').addEventListener('click', e => {
 let filtro= document.getElementById('confirmButton');
 
 filtro.addEventListener('click', function () {
+fil();
+
+})
+function fil(){
     let comu = document.getElementById('validationServer01');
     let loca = document.getElementById('validationServer02');
     let calle = document.getElementById('validationServer03');
@@ -317,9 +321,9 @@ filtro.addEventListener('click', function () {
         if (sol2.checked) {
             sol3=sol2.value;
         }
-    let url = 'http://localhost:8888/api/auto'
-    let url2 = 'http://localhost:8888/api/loca'
-    let url3 = 'http://localhost:8888/api/calle'
+    let url = 'http://solucionaya.es/api/auto'
+    let url2 = 'http://solucionaya.es/api/loca'
+    let url3 = 'http://solucionaya.es/api/calle'
 
     fetch(url, {
         method: "GET",
@@ -381,17 +385,17 @@ filtro.addEventListener('click', function () {
                                 s:sol3
                             }
                             console.log(body);
-                            fetch("http://localhost:8888/explorar/filtro", {
+                            fetch("http://solucionaya.es/explorar/filtro", {
                                 method: 'POST',
                                 body: JSON.stringify(body),
                                 headers: {
                                     'Content-Type': 'application/json'
                                 }
                             }).then(response => response.json()).then(data => {
-                                let url4 = 'http://localhost:8888/api/loca';
-                                let url5 = 'http://localhost:8888/api/auto';
-                                  url3 = 'http://localhost:8888/api/calle';
-                                  url2 = 'http://localhost:8888/api/problema';
+                                let url4 = 'http://solucionaya.es/api/loca';
+                                let url5 = 'http://solucionaya.es/api/auto';
+                                  url3 = 'http://solucionaya.es/api/calle';
+                                  url2 = 'http://solucionaya.es/api/problema';
                                 let conte = data;
 
                                 let padre = document.getElementById('contenedor');
@@ -497,11 +501,7 @@ filtro.addEventListener('click', function () {
 
 
         })
-
-
-
-
-})
+}
 
 function index2(conte,pro,ca,loca,au,img2){
 
@@ -538,7 +538,7 @@ div2.appendChild(img);
 div2.appendChild(p);
 div2.appendChild(p2);
  div1.addEventListener('click', function (e) {
-            window.location = "http://localhost:8888/problema?"+conte.id;
+            window.location = "http://solucionaya.es/problema?"+conte.id;
         });
 
 

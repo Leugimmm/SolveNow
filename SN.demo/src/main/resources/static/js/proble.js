@@ -1,7 +1,7 @@
 const sube2 = document.getElementById('index');
 
 sube2.addEventListener('click', () => {
-window.location.href = "http://localhost:8888";
+window.location.href = "http://solucionaya.es/";
 });
 if (JSON.parse(localStorage.getItem('usuario1')) !== null) {
 
@@ -41,7 +41,7 @@ if (JSON.parse(localStorage.getItem('usuario1')) !== null) {
                             }else{
                              bu.addEventListener('click',function(){
                                 let  data2 = { "id": conte.id, "solucionado": '1' };
-                                fetch("http://localhost:8888/api/update",
+                                fetch("http://solucionaya.es/api/update",
                                         {
                                             method: "POST",
                                             headers: {
@@ -57,7 +57,7 @@ if (JSON.parse(localStorage.getItem('usuario1')) !== null) {
                                                                                          timer: 2000 // Muestra el mensaje durante 2 segundos
                                                                                        }).then(() => {
                                                                                          // Redirige a la URL después de que termine el tiempo
-                                                                                         window.location.href = 'http://localhost:8888'; // Reemplaza 'URL_DEL_SITIO' con la URL a la que deseas redirigir
+                                                                                         window.location.href = 'http://solucionaya.es/'; // Reemplaza 'URL_DEL_SITIO' con la URL a la que deseas redirigir
                                                                                        });
                                         })
 
@@ -98,7 +98,7 @@ if (JSON.parse(localStorage.getItem('usuario1')) !== null) {
                                     }else{
                                      bu.addEventListener('click',function(){
                                         let  data2 = { "id": conte.id, "solucionado": '1' };
-                                        fetch("http://localhost:8888/api/update",
+                                        fetch("http://solucionaya.es/api/update",
                                                 {
                                                     method: "POST",
                                                     headers: {
@@ -114,7 +114,7 @@ if (JSON.parse(localStorage.getItem('usuario1')) !== null) {
                                                                                                  timer: 2000 // Muestra el mensaje durante 2 segundos
                                                                                                }).then(() => {
                                                                                                  // Redirige a la URL después de que termine el tiempo
-                                                                                                 window.location.href = 'http://localhost:8888'; // Reemplaza 'URL_DEL_SITIO' con la URL a la que deseas redirigir
+                                                                                                 window.location.href = 'http://solucionaya.es/'; // Reemplaza 'URL_DEL_SITIO' con la URL a la que deseas redirigir
                                                                                                });
                                                 })
 
@@ -135,10 +135,10 @@ window.addEventListener("load", function (event)  {
  let url = window.location.toString();
   url = url.replace("?", "/");
   console.log(url);
-    let url4 = 'http://localhost:8888/api/loca';
-      let url3 = 'http://localhost:8888/api/calle';
-      let url2 = 'http://localhost:8888/api/problema';
-      let url5 = 'http://localhost:8888/api/auto';
+    let url4 = 'http://solucionaya.es/api/loca';
+      let url3 = 'http://solucionaya.es/api/calle';
+      let url2 = 'http://solucionaya.es/api/problema';
+      let url5 = 'http://solucionaya.es/api/auto';
  // Concatena el dato como parámetro en la URL
  fetch(url, {
      method: "GET",

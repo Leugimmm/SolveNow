@@ -8,7 +8,7 @@ if (JSON.parse(localStorage.getItem('usuario1')) !== null) {
     console.log('El valor almacenado es: ', valorAlmacenado);
   const sube = document.getElementById('sube');
   sube.addEventListener('click', () => {
-  window.location.href = "http://localhost:8888/sube";
+  window.location.href = "http://solucionaya.es/sube";
   });
 let ini = document.getElementById('ini');
 let regi = document.getElementById('regi');
@@ -16,12 +16,12 @@ let regi = document.getElementById('regi');
   ini.textContent='Perfil';
   regi.textContent='Cerrar sesion';
 
-ini.href="http://localhost:8888/perfil?"+valorAlmacenado.id;
-regi.href="http://localhost:8888/";
+ini.href="http://solucionaya.es/perfil?"+valorAlmacenado.id;
+regi.href="http://solucionaya.es/";
 
  regi.addEventListener('click',function(){
      localStorage.setItem("usuario1", null);
-    window.location.href="http://localhost:8888/";
+    window.location.href="http://solucionaya.es/";
     });
 
 
@@ -50,7 +50,7 @@ sube.addEventListener('click', () => {
 const sube2 = document.getElementById('index');
 
 sube2.addEventListener('click', () => {
-window.location.href = "http://localhost:8888";
+window.location.href = "http://solucionaya.es/";
 });
 
 
@@ -61,11 +61,11 @@ window.location.href = "http://localhost:8888";
 
 window.addEventListener("load", function (event) {
 
-    let url = 'http://localhost:8888/api/post';
-    let url4 = 'http://localhost:8888/api/loca';
-    let url5 = 'http://localhost:8888/api/auto';
-    let url3 = 'http://localhost:8888/api/calle';
-    let url2 = 'http://localhost:8888/api/problema';
+    let url = 'http://solucionaya.es/api/post';
+    let url4 = 'http://solucionaya.es/api/loca';
+    let url5 = 'http://solucionaya.es/api/auto';
+    let url3 = 'http://solucionaya.es/api/calle';
+    let url2 = 'http://solucionaya.es/api/problema';
     fetch(url, {
         method: "GET",
         headers: {
@@ -199,7 +199,7 @@ div2.appendChild(img);
 div2.appendChild(p);
 div2.appendChild(p2);
  div1.addEventListener('click', function (e) {
-            window.location = "http://localhost:8888/problema?"+conte.id;
+            window.location = "http://solucionaya.es/problema?"+conte.id;
         });
 
 

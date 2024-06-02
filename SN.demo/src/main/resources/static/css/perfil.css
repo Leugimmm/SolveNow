@@ -2,6 +2,15 @@ main{
     height: calc(100% - 150px);
     margin: 0;
 }
+#a1,#a2{
+display:none;
+}
+#conti > form > div:nth-child(2) > div:nth-child(1) > div{
+height:100px;
+}
+#conti > form > div:nth-child(2) > div:nth-child(2) > div{
+height:200px;
+}
 #conti{
     display: flex;
     flex-direction: row;

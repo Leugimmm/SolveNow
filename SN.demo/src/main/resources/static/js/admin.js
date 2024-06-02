@@ -6,7 +6,7 @@ if (JSON.parse(localStorage.getItem('usuario1')) !== null) {
 const sube = document.getElementById('per');
 
 sube.addEventListener('click', function () {
-window.location.href = "http://localhost:8888/perfil?"+valorAlmacenado.id;
+window.location.href = "http://solucionaya.es/perfil?"+valorAlmacenado.id;
 });
 
 } else {
@@ -18,7 +18,7 @@ window.location.href = "http://localhost:8888/perfil?"+valorAlmacenado.id;
 const sube2 = document.getElementById('inicio');
 
 sube2.addEventListener('click', function() {
-window.location.href = "http://localhost:8888";
+window.location.href = "http://solucionaya.es/";
 });
 
 const sube3 = document.getElementById('us');
@@ -89,7 +89,7 @@ let tabla=document.getElementById('ta')
 
                           eli.addEventListener('click', function() {
                           let data={"id":datosTabla[i].id};
-                          fetch("http://localhost:8888/api/deleteUsu", {
+                          fetch("http://solucionaya.es/api/deleteUsu", {
                                   method: "POST",
                                   headers: {
                                       "Content-Type": "application/json"
@@ -122,7 +122,7 @@ let tabla=document.getElementById('ta')
                           let eli= crearElementoBotton('Eliminar', 'button', di);
                           eli.addEventListener('click', function() {
                                                     let data={"id":datosTabla.id};
-                                                    fetch("http://localhost:8888/api/deletePo", {
+                                                    fetch("http://solucionaya.es/api/deletePo", {
                                                             method: "POST",
                                                             headers: {
                                                                 "Content-Type": "application/json"
@@ -139,7 +139,7 @@ let tabla=document.getElementById('ta')
 }
 
 function datos(){
-let url = 'http://localhost:8888/api/users';
+let url = 'http://solucionaya.es/api/users';
  fetch(url, {
         method: "GET",
         headers: {
@@ -161,11 +161,11 @@ let tabla=document.getElementById('ta')
         crearElementoTexto2('Problema', 'td', fila3);
         crearElementoTexto2('Nivel', 'td', fila3);
         crearElementoTexto2('', 'td', fila3);
-let url = 'http://localhost:8888/api/post';
-let url4 = 'http://localhost:8888/api/loca';
-      let url3 = 'http://localhost:8888/api/calle';
-      let url2 = 'http://localhost:8888/api/problema';
-      let url5 = 'http://localhost:8888/api/auto';
+let url = 'http://solucionaya.es/api/post';
+let url4 = 'http://solucionaya.es/api/loca';
+      let url3 = 'http://solucionaya.es/api/calle';
+      let url2 = 'http://solucionaya.es/api/problema';
+      let url5 = 'http://solucionaya.es/api/auto';
  fetch(url, {
         method: "GET",
         headers: {

@@ -1,7 +1,7 @@
 const sube2 = document.getElementById('index');
 
 sube2.addEventListener('click', () => {
-window.location.href = "http://localhost:8888";
+window.location.href = "http://solucionaya.es/";
 });
 let valorAlmacenado = JSON.parse(localStorage.getItem('usuario1'));;
 if (JSON.parse(localStorage.getItem('usuario1')) !== null) {
@@ -12,15 +12,15 @@ if (JSON.parse(localStorage.getItem('usuario1')) !== null) {
 
 
 } else {
-             window.location.href = 'http://localhost:8888';
+             window.location.href = 'http://solucionaya.es/';
     // El localStorage no existe o no tiene un valor para la clave 'miClave'
     console.log('El localStorage no tiene un valor para la clave "miClave".');
 }
 window.addEventListener("load", function (event) {
-    let url = 'http://localhost:8888/api/auto'
-    let url2= 'http://localhost:8888/api/loca'
-    let url3= 'http://localhost:8888/api/calle'
-    let url4= 'http://localhost:8888/api/problema'
+    let url = 'http://solucionaya.es/api/auto'
+    let url2= 'http://solucionaya.es/api/loca'
+    let url3= 'http://solucionaya.es/api/calle'
+    let url4= 'http://solucionaya.es/api/problema'
     fetch(url, {
         method: "GET",
         headers: {
@@ -316,6 +316,29 @@ document.getElementById('validationServer05').addEventListener('click', e => {
 
 
 })
+document.addEventListener('click', e => {
+    const input = document.getElementById('validationServer05');
+     const input2 = document.getElementById('validationServerUsername');
+      const input3 = document.getElementById('validationServer02');
+       const input4 = document.getElementById('validationServer01');
+    const conte = document.querySelector('body > main > div > form > div:nth-child(2) > div.col-md-3.mb-3 .conte');
+    const conte2 =document.querySelector('body > main > div > form >  div:nth-child(1) > div:nth-child(3) .conte');
+    const conte3 =document.querySelector('body > main > div > form >  div:nth-child(1) > div:nth-child(2) .conte')
+    const conte4 =document.querySelector('body > main > div > form >  div:nth-child(1) > div:nth-child(1) .conte')
+    // Verificar si el clic se ha realizado fuera del input y de los elementos asociados
+    if (!input.contains(e.target) && !conte.contains(e.target)) {
+        conte.classList.add('filtro');
+    }
+    if (!input2.contains(e.target) && !conte2.contains(e.target)) {
+            conte2.classList.add('filtro');
+        }
+        if (!input3.contains(e.target) && !conte3.contains(e.target)) {
+                conte3.classList.add('filtro');
+            }
+            if (!input4.contains(e.target) && !conte4.contains(e.target)) {
+                    conte4.classList.add('filtro');
+                }
+});
 
 const formu = document.querySelector('form');
 formu.addEventListener('submit', e => {
@@ -332,12 +355,12 @@ formu.addEventListener('submit', e => {
     let problema = document.getElementById('validationServer05');
 
     console.log(descripcion.value);
-    let url = 'http://localhost:8888/api/auto'
-    let url2 = 'http://localhost:8888/api/loca'
-    let url3 = 'http://localhost:8888/api/calle'
-    let url4 = 'http://localhost:8888/api/problema'
-    let url5 = 'http://localhost:8888/api/sube'
-    let url6= 'http://localhost:8888/upload';
+    let url = 'http://solucionaya.es/api/auto'
+    let url2 = 'http://solucionaya.es/api/loca'
+    let url3 = 'http://solucionaya.es/api/calle'
+    let url4 = 'http://solucionaya.es/api/problema'
+    let url5 = 'http://solucionaya.es/api/sube'
+    let url6= 'http://solucionaya.es/upload';
 
     fetch(url, {
         method: "GET",
@@ -356,6 +379,7 @@ formu.addEventListener('submit', e => {
 
                 }
             }
+
             fetch(url2, {
                 method: "GET",
                 headers: {
@@ -407,21 +431,22 @@ formu.addEventListener('submit', e => {
 
                                         }
                                     }
-                                    console.log(pro);
-                                    console.log(cal);
-                                    console.log(local);
-                                    console.log(comuna);
+
                                       const fileInput = document.getElementById('foto');
                                      const file = fileInput.files[0];
-                                     const newFileName = generarNumeroAleatorioDe10Digitos() + file.name; // Cambia esto según tus necesidades
 
-                                         // Crear un nuevo archivo con el mismo contenido pero con el nuevo nombre
-                                         const renamedFile = new File([file], newFileName, { type: file.type });
+                                    if(comproba(cal,pro,comuna,local,file)==true){
 
-                                     console.log(renamedFile.name);
+                                    }else{
+                                    const newFileName = generarNumeroAleatorioDe10Digitos() + file.name; // Cambia esto según tus necesidades
 
-                                    let  data2 = { "id_Calle": cal, "id_problema": pro,"descripcion":descripcion.value,"foto":newFileName,"id_Autonoma":comuna,"id_localidad":local,"id_Usuario":valorAlmacenado.id};
-                                    console.log(data2);
+                                                                             // Crear un nuevo archivo con el mismo contenido pero con el nuevo nombre
+                                     const renamedFile = new File([file], newFileName, { type: file.type });
+
+                                         console.log(renamedFile.name);
+
+                                          let  data2 = { "id_Calle": cal, "id_problema": pro,"descripcion":descripcion.value,"foto":newFileName,"id_Autonoma":comuna,"id_localidad":local,"id_Usuario":valorAlmacenado.id};
+                                            console.log(data2);
                                      fetch(url5, {
                                             method: "POST",
                                             headers: {
@@ -456,12 +481,13 @@ formu.addEventListener('submit', e => {
                                                   timer: 2000 // Muestra el mensaje durante 2 segundos
                                                 }).then(() => {
                                                   // Redirige a la URL después de que termine el tiempo
-                                                  window.location.href = 'http://localhost:8888'; // Reemplaza 'URL_DEL_SITIO' con la URL a la que deseas redirigir
+                                                  window.location.href = 'http://solucionaya.es/'; // Reemplaza 'URL_DEL_SITIO' con la URL a la que deseas redirigir
                                                 });
                                             })
 
                                             }
                                              )
+                                             }
 
                                 })
                         })
@@ -473,6 +499,50 @@ formu.addEventListener('submit', e => {
 
 })
 
+function comproba(cal,pro,comuna,local,file){
+let p1=document.querySelector('#a1');
+let p2=document.querySelector('#a2');
+let p3=document.querySelector('#a3');
+let p4=document.querySelector('#a4');
+let p5=document.querySelector('#a5');
+p1.style.display = 'none';
+p2.style.display = 'none';
+p3.style.display = 'none';
+p4.style.display = 'none';
+p5.style.display = 'none';
+
+if(cal==null){
+
+p3.style.display = 'block';
+p3.style.color='red';
+return true;
+}
+if(pro==null){
+
+p4.style.display = 'block';
+p4.style.color='red';
+return true;
+}
+if(comuna==null){
+
+p1.style.display = 'block';
+p1.style.color='red';
+return true;
+}
+if(local==null){
+
+p2.style.display = 'block';
+p2.style.color='red';
+return true;
+}
+if(file==null){
+p5.style.display = 'block';
+p5.style.color='red';
+return true;
+}
+return false;
+
+}
 function generarNumeroAleatorioDe10Digitos() {
     const min = 1000000000; // 10^9
     const max = 9999999999; // 10^10 - 1

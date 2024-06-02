@@ -1,7 +1,7 @@
 const sube2 = document.getElementById('index');
 
 sube2.addEventListener('click', () => {
-window.location.href = "http://localhost:8888";
+window.location.href = "http://solucionaya.es/";
 });
 
 if (JSON.parse(localStorage.getItem('usuario1')) !== null) {
@@ -12,7 +12,7 @@ if (JSON.parse(localStorage.getItem('usuario1')) !== null) {
 
 
 } else {
-             window.location.href = 'http://localhost:8888';
+             window.location.href = 'http://solucionaya.es/';
     // El localStorage no existe o no tiene un valor para la clave 'miClave'
     console.log('El localStorage no tiene un valor para la clave "miClave".');
 }
@@ -60,13 +60,13 @@ let bu=document.createElement('button');
         bu.textContent='Panel de Admin';
         pa.appendChild(bu)
         bu.addEventListener('click',function(){
-                window.location.href="http://localhost:8888/admin";
+                window.location.href="http://solucionaya.es/admin";
                 });
 }
 
 
-let url = 'http://localhost:8888/api/auto'
-    let url2= 'http://localhost:8888/api/loca'
+let url = 'http://solucionaya.es/api/auto'
+    let url2= 'http://solucionaya.es/api/loca'
 
         fetch(url, {
             method: "GET",
@@ -238,6 +238,23 @@ ul.appendChild(nuevoLi);
 
 
      })
+     document.addEventListener('click', e => {
+         const input = document.getElementById('comu');
+          const input2 = document.getElementById('loca');
+
+         const conte = document.querySelector('#conti > form > div:nth-child(2) > div:nth-child(1) > div');
+         const conte2 =document.querySelector('#conti > form > div:nth-child(2) > div:nth-child(2) > div');
+
+         // Verificar si el clic se ha realizado fuera del input y de los elementos asociados
+         if (!input.contains(e.target) && !conte.contains(e.target)) {
+             conte.classList.add('filtro');
+         }
+         if (!input2.contains(e.target) && !conte2.contains(e.target)) {
+                 conte2.classList.add('filtro');
+             }
+
+     });
+
 
    const formu = document.querySelector('form');
    formu.addEventListener('submit', e => {
@@ -248,10 +265,10 @@ ul.appendChild(nuevoLi);
        let pass = document.getElementById('pass');
        let comu = document.getElementById('comu');
        let loca = document.getElementById('loca');
-       let url3 = "http://localhost:8888/update/usu";
+       let url3 = "http://solucionaya.es/update/usu";
 
-       let url = 'http://localhost:8888/api/auto'
-       let url2 = 'http://localhost:8888/api/loca'
+       let url = 'http://solucionaya.es/api/auto'
+       let url2 = 'http://solucionaya.es/api/loca'
 
        fetch(url, {
            method: "GET",
@@ -310,7 +327,8 @@ ul.appendChild(nuevoLi);
 
 
 
-
+                        if(comproba(comuna,local,file)){
+                        }else{
                        fetch(url3, {
                            method: "PUT",
                            headers: {
@@ -321,9 +339,17 @@ ul.appendChild(nuevoLi);
                            .then(response => response.json())
                            .then(data => {
                            if (!fileInput.files || fileInput.files.length === 0) {
-
+ Swal.fire({
+                                  title: 'Perfil Actualizado',
+                                  icon: 'success',
+                                  showConfirmButton: false,
+                                       timer: 2000 // Muestra el mensaje durante 2 segundos
+                                           }).then(() => {
+                                                 // Redirige a la URL después de que termine el tiempo
+                                                        window.location.href = 'http://solucionaya.es/'; // Reemplaza 'URL_DEL_SITIO' con la URL a la que deseas redirigir
+                                   });
                                }else{
-                               let url6= 'http://localhost:8888/upload';
+                               let url6= 'http://solucionaya.es/upload';
                                const formData = new FormData();
                                                                                                       formData.append('file', renamedFile);
 
@@ -343,7 +369,7 @@ ul.appendChild(nuevoLi);
                                                                                                             timer: 2000 // Muestra el mensaje durante 2 segundos
                                                                                                           }).then(() => {
                                                                                                             // Redirige a la URL después de que termine el tiempo
-                                                                                                            window.location.href = 'http://localhost:8888'; // Reemplaza 'URL_DEL_SITIO' con la URL a la que deseas redirigir
+                                                                                                            window.location.href = 'http://solucionaya.es/'; // Reemplaza 'URL_DEL_SITIO' con la URL a la que deseas redirigir
                                                                                                           });
                                                                                                       })
                                }
@@ -351,7 +377,7 @@ ul.appendChild(nuevoLi);
 
 
                            })
-
+                        }
                    })
            })
 
@@ -377,6 +403,30 @@ ul.appendChild(nuevoLi);
            alert('No es un archivo')
        }
    })
+   function comproba(comuna,local){
+   let p1=document.querySelector('#a1');
+   let p2=document.querySelector('#a2');
+
+   p1.style.display = 'none';
+   p2.style.display = 'none';
+
+
+   if(comuna==null){
+
+   p1.style.display = 'block';
+   p1.style.color='red';
+   return true;
+   }
+   if(local==null){
+
+   p2.style.display = 'block';
+   p2.style.color='red';
+   return true;
+   }
+
+   return false;
+
+   }
 
 
 

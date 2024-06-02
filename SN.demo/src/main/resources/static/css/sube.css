@@ -2,6 +2,9 @@ main{
     height: calc(100% - 160px);
     margin: 0;
 }
+#a1,#a2,#a3,#a4,#a5{
+display:none;
+}
 main>div>h2{
     color: black;
     text-align: center;
