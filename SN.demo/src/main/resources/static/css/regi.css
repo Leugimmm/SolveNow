@@ -222,7 +222,7 @@ margin-bottom: 20px;
       position: absolute;
       width: 100%;
       z-index: 1;
-      height: 300px;
+      height: 200px;
       overflow-y: auto;
   }
   #a1,#a2,#a3,#a4,#a5,#a6{
