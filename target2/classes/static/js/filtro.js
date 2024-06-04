@@ -266,6 +266,27 @@ document.getElementById('validationServer03').addEventListener('click', e => {
     document.querySelector('#filterOptions > div:nth-child(5) > div').classList.remove('filtro');
 })
 
+document.addEventListener('click', e => {
+         let input = document.getElementById('validationServer01');
+             let input2 = document.getElementById('validationServer02');
+             let input3 = document.getElementById('validationServer03');
+
+         const conte = document.querySelector('#filterOptions > div:nth-child(3) > div');
+         const conte2 =document.querySelector('#filterOptions > div:nth-child(4) > div');
+         const conte3 =document.querySelector('#filterOptions > div:nth-child(5) > div');
+
+         // Verificar si el clic se ha realizado fuera del input y de los elementos asociados
+         if (!input.contains(e.target) && !conte.contains(e.target)) {
+             conte.classList.add('filtro');
+         }
+         if (!input2.contains(e.target) && !conte2.contains(e.target)) {
+                 conte2.classList.add('filtro');
+             }
+             if (!input3.contains(e.target) && !conte3.contains(e.target)) {
+                              conte3.classList.add('filtro');
+                          }
+
+     });
 let filtro= document.getElementById('confirmButton');
 
 filtro.addEventListener('click', function () {

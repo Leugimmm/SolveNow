@@ -156,7 +156,9 @@ function res(dato){
 let p4=document.querySelector('#a2');
  if(dato=='false'){ p4.textContent = "Usuario con este correo ya existe";
                     p4.style.display = 'block';
-                                        p4.style.color='red';}
+                                        p4.style.color='red';}else{
+                                        window.location.href="http://solucionaya.es/login";
+                                        }
 }
 
 window.addEventListener("load", function (event)  {
