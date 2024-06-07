@@ -25,10 +25,10 @@ confirmButton.addEventListener('click', () => {
 });
 
 window.addEventListener("load", function (event) {
-    let url = 'http://localhost/api/auto'
-    let url2= 'http://localhost/api/loca'
-    let url3= 'http://localhost/api/calle'
-    let url4= 'http://localhost/api/problema'
+    let url = 'http://solucionaya.es/api/auto'
+    let url2= 'http://solucionaya.es/api/loca'
+    let url3= 'http://solucionaya.es/api/calle'
+    let url4= 'http://solucionaya.es/api/problema'
     fetch(url, {
         method: "GET",
         headers: {
