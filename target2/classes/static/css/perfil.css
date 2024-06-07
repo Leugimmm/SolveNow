@@ -111,6 +111,10 @@ width:50%;
     color: white;
     opacity:  1;
   }
+  .form-control[readonly] {
+      background-color: rgba(21, 8, 100, 0.40);
+      opacity: 1;
+  }
 @media only screen and (max-width: 760px) {
 
     main{

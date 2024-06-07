@@ -21,7 +21,7 @@ filterButton.addEventListener('click', () => {
 
 confirmButton.addEventListener('click', () => {
   filterOverlay.style.display = 'none';
-  conte.style.display = 'block';
+  conte.style.display = 'flex';
 });
 
 window.addEventListener("load", function (event) {
