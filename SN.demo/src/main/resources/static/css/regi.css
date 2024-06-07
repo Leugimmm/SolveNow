@@ -9,26 +9,32 @@ main{
     position: relative;
 }
 #user{
+    color: white;
 background-color: rgba(21, 8, 100, 0.40);
 
 }
 #email{
+    color: white;
 background-color: rgba(21, 8, 100, 0.40);
 
 }
 #loca{
+    color: white;
 background-color: rgba(21, 8, 100, 0.40);
 
 }
 #comu{
+    color: white;
 background-color: rgba(21, 8, 100, 0.40);
 }
 
 #pass{
+    color: white;
 background-color: rgba(21, 8, 100, 0.40);
 
 }
 #repass{
+    color: white;
 background-color: rgba(21, 8, 100, 0.40);
 
 }

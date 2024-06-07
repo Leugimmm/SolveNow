@@ -208,7 +208,7 @@ nuevoLi.classList.add('filtro');
 
 nuevoLi.addEventListener('click',function(){
 document.getElementById('comu').value=nuevoLi.textContent;
-console.log(nuevoLi.textContent);
+document.querySelector('body > main > div.login-container > div > form > div:nth-child(7) > div.conte ').classList.add('filtro');
 })
 
 ul.appendChild(nuevoLi);
@@ -229,7 +229,7 @@ nuevoLi.classList.add('filtro');
 
 nuevoLi.addEventListener('click',function(){
 document.getElementById('loca').value=nuevoLi.textContent;
-console.log(nuevoLi.textContent);
+document.querySelector('body > main > div.login-container > div > form > div:nth-child(9) > div.conte ').classList.add('filtro');
 })
 
 ul.appendChild(nuevoLi);

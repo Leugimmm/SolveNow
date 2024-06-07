@@ -1,5 +1,6 @@
 const filterButton = document.getElementById('filterButton');
 const filterOverlay = document.getElementById('filterOverlay');
+const conte = document.getElementById('contenedor');
 const confirmButton = document.getElementById('confirmButton');
 let Checked = null;
 //The class name can vary
@@ -15,17 +16,19 @@ for (let CheckBox of document.getElementsByClassName('only-one')){
 
 filterButton.addEventListener('click', () => {
   filterOverlay.style.display = 'block';
+  conte.style.display = 'none';
 });
 
 confirmButton.addEventListener('click', () => {
   filterOverlay.style.display = 'none';
+  conte.style.display = 'block';
 });
 
 window.addEventListener("load", function (event) {
-    let url = 'http://solucionaya.es/api/auto'
-    let url2= 'http://solucionaya.es/api/loca'
-    let url3= 'http://solucionaya.es/api/calle'
-    let url4= 'http://solucionaya.es/api/problema'
+    let url = 'http://localhost/api/auto'
+    let url2= 'http://localhost/api/loca'
+    let url3= 'http://localhost/api/calle'
+    let url4= 'http://localhost/api/problema'
     fetch(url, {
         method: "GET",
         headers: {
@@ -79,6 +82,7 @@ nuevoLi.classList.add('filtro');
 
 nuevoLi.addEventListener('click',function(){
 document.getElementById('validationServer01').value=nuevoLi.textContent;
+document.querySelector('#filterOptions > div:nth-child(3) > div').classList.add('filtro');
 
 })
 
@@ -100,6 +104,7 @@ nuevoLi.classList.add('filtro');
 
 nuevoLi.addEventListener('click',function(){
 document.getElementById('validationServer02').value=nuevoLi.textContent;
+document.querySelector('#filterOptions > div:nth-child(4) > div').classList.add('filtro');
 
 })
 
@@ -121,6 +126,7 @@ nuevoLi.classList.add('filtro');
 
 nuevoLi.addEventListener('click',function(){
 document.getElementById('validationServer03').value=nuevoLi.textContent;
+document.querySelector('#filterOptions > div:nth-child(5) > div').classList.add('filtro');
 
 })
 
