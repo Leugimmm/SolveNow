@@ -26,6 +26,9 @@ main>div{
     border-radius: 5px;
     overflow-x: auto;
 }
+footer>p{
+color:white;
+}
 
 img{
     width: 75%;
