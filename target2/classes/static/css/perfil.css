@@ -103,6 +103,48 @@ width:50%;
     height: 200px;
     overflow-y: auto;
 }
+.form-control{
+    background-color: rgba(21, 8, 100, 0.40);
+        color: white;
+}
+.form-control::-webkit-input-placeholder {
+    color: white;
+    opacity:  1;
+  }
+@media only screen and (max-width: 760px) {
+
+    main{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+    }
+    header {
+        height: auto;
+        padding: 20px;
+    }
+    main {
+        padding: 0 10px;
+    }
+    #conimg, #conedi {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+    #conimg img {
+        height: 100px;
+        width: 100px;
+    }
+    #conedi hr{
+        display: none;
+    }
+    #conti{
+        margin-bottom: 10px;
+    }
+           }
+
+
+
 
 
 

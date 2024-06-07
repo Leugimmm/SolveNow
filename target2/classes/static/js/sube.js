@@ -74,7 +74,7 @@ nuevoLi.classList.add('filtro');
 
 nuevoLi.addEventListener('click',function(){
 document.getElementById('validationServer01').value=nuevoLi.textContent;
-console.log(nuevoLi.textContent);
+document.querySelector('body > main > div > form > div:nth-child(1) > div:nth-child(1) .conte').classList.add('filtro');
 })
 
 ul.appendChild(nuevoLi);
@@ -95,7 +95,7 @@ nuevoLi.classList.add('filtro');
 
 nuevoLi.addEventListener('click',function(){
 document.getElementById('validationServer02').value=nuevoLi.textContent;
-console.log(nuevoLi.textContent);
+document.querySelector('body > main > div > form > div:nth-child(2) > div:nth-child(1) .conte').classList.add('filtro');
 })
 
 ul.appendChild(nuevoLi);
@@ -116,7 +116,7 @@ nuevoLi.classList.add('filtro');
 
 nuevoLi.addEventListener('click',function(){
 document.getElementById('validationServerUsername').value=nuevoLi.textContent;
-console.log(nuevoLi.textContent);
+document.querySelector('body > main > div > form > div:nth-child(1) > div:nth-child(3) .conte').classList.add('filtro');
 })
 
 ul.appendChild(nuevoLi);
@@ -137,7 +137,7 @@ nuevoLi.classList.add('filtro');
 
 nuevoLi.addEventListener('click',function(){
 document.getElementById('validationServer05').value=nuevoLi.textContent;
-console.log(nuevoLi.textContent);
+document.querySelector('body > main > div > form > div:nth-child(2) > div.col-md-3.mb-3 .conte').classList.add('filtro');
 })
 
 ul.appendChild(nuevoLi);

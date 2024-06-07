@@ -76,6 +76,14 @@ body > main > div > form > div:nth-child(1) > div:nth-child(1){
 body > main > div > form > div:nth-child(1) > div:nth-child(2){
 position: relative;
 }
+.form-control{
+    background-color: rgba(21, 8, 100, 0.40);
+        color: white;
+}
+.form-control::-webkit-input-placeholder {
+    color: white;
+    opacity:  1;
+  }
 @media only screen and (max-width: 660px) {
 
     body > main > div > form > div:nth-child(2) > div.form-group{
