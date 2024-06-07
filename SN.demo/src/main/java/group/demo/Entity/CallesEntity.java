@@ -12,8 +12,8 @@ public class CallesEntity {
     @Column(name = "ID", nullable = false)
     private int id;
     @Basic
-    @Column(name = "ID_localidad", nullable = false)
-    private int id_localidad;
+    @Column(name = "ID_localidad", nullable = true)
+    private String id_localidad;
     @Basic
     @Column(name = "NOMBRE", nullable = true, length = 30)
     private String calle;

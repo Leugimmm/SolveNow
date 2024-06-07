@@ -8,7 +8,7 @@ import lombok.Data;
 public class CallesDTO {
     private int id;
 
-    private int id_localidad;
+    private String id_localidad;
 
     private String calle;
 
