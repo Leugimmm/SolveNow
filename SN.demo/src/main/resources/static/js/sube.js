@@ -95,7 +95,7 @@ nuevoLi.classList.add('filtro');
 
 nuevoLi.addEventListener('click',function(){
 document.getElementById('validationServer02').value=nuevoLi.textContent;
-document.querySelector('body > main > div > form > div:nth-child(2) > div:nth-child(1) .conte').classList.add('filtro');
+document.querySelector('body > main > div > form > div:nth-child(1) > div:nth-child(2) .conte').classList.add('filtro');
 })
 
 ul.appendChild(nuevoLi);

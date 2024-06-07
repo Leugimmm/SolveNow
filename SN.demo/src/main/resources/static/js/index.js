@@ -12,9 +12,21 @@ if (JSON.parse(localStorage.getItem('usuario1')) !== null) {
   });
 let ini = document.getElementById('ini');
 let regi = document.getElementById('regi');
+let pa = document.getElementById('profileDropdown');
+
+
 
   ini.textContent='Perfil';
   regi.textContent='Cerrar sesion';
+  if(valorAlmacenado.rol=='A'){
+  let admin = document.createElement('a');
+    admin.textContent='Panel Admin';
+    admin.href="http://solucionaya.es/admin";
+    pa.appendChild(admin);
+
+  }
+
+changeStrokeColor();
 
 ini.href="http://solucionaya.es/perfil?"+valorAlmacenado.id;
 regi.href="http://solucionaya.es/";
@@ -44,7 +56,11 @@ sube.addEventListener('click', () => {
 }
 
 
-
+function changeStrokeColor() {
+            document.getElementById("Vector").setAttribute("stroke", "#4CAF50");
+            document.getElementById("Vector_2").setAttribute("stroke", "#4CAF50");
+            document.getElementById("Vector_3").setAttribute("stroke", "#4CAF50");
+        }
 
 
 const sube2 = document.getElementById('index');
