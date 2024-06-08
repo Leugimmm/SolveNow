@@ -33,7 +33,7 @@ formu.addEventListener('submit', e => {
                 bool = false;
             }
              if(!(/^[a-zA-ZáéíóúüÜÁÉÍÓÚñÑ\s-]{3,30}$/).test(name)){
-p3.textContent = "El campo nombre debe tener un minimo de 3-30 caracteres";
+p3.textContent = "El campo nombre debe tener un minimo de 3-30 caracteres y no puede tener numeros";
 p3.style.display = 'block';
                     p3.style.color='red';
                     bool = false;

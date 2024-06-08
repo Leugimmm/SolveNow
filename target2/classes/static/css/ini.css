@@ -8,7 +8,9 @@ main{
     height: 100vh;
     position: relative;
 }
-
+#error{
+color:red;
+}
 
 .login-container {
     position: relative;
