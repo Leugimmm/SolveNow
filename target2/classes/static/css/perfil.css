@@ -111,6 +111,9 @@ width:50%;
     color: white;
     opacity:  1;
   }
+  .form-control[readonly] {
+      color: black;
+  }
 @media only screen and (max-width: 760px) {
 
     main{
