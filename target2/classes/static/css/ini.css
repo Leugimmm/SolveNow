@@ -35,20 +35,20 @@ body > main > div.login-container > div > form > div:nth-child(3) > div > span{
   background-color: rgba(21, 8, 100, 0.89);
 }
 
-body > main > div.login-container > div > form > div:nth-child(2) > div>span{
+body > main > div.login-container > div > form > div:nth-child(4) > div>span{
   background-color: rgba(21, 8, 100, 0.89);
 }
-body > main > div.login-container > div > form > div:nth-child(2){
+body > main > div.login-container > div > form > div:nth-child(4){
 
   margin-top: 10px;
   height: 13%;
 }
-body > main > div.login-container > div > form > div:nth-child(2) > input{
+body > main > div.login-container > div > form > div:nth-child(4) > input{
   background-color: rgba(21, 8, 100, 0.40);
   height: 100%;
       color: white;
 }
-body > main > div.login-container > div > form > div:nth-child(2) > input::-webkit-input-placeholder {
+body > main > div.login-container > div > form > div:nth-child(4) > input::-webkit-input-placeholder {
   color: white;
   opacity:  1;
 }

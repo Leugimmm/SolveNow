@@ -69,7 +69,7 @@ function response(data) {
         })
 
     } else {
-        console.log('error');
+        document.getElementById("error").textContent = "Correo o contraseña incorrectos";
     }
 }
 function isvalid(valor, param) {
