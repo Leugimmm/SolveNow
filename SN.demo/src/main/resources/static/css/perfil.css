@@ -105,6 +105,7 @@ width:50%;
 }
 .form-control{
     background-color: rgba(21, 8, 100, 0.40);
+    color:white;
 }
 .form-control::-webkit-input-placeholder {
     color: white;
