@@ -1,99 +1,128 @@
 p{
-color:black;
-}
-main{
-    height: calc(100% - 160px);
-    margin: 0;
-}
-main>div>h2{
-    color: black;
-    text-align: center;
-}
-
-footer{
-    height: 75px;
-}
-header{
-    height: 75px;
-}
-main>div{
-
-    margin: 0 auto;
-    margin-top: 10px;
-    width: 97%;
-    height: 97%;
-    background-color: rgba(255, 255, 255, 0.89);
-    border-radius: 5px;
-    overflow-x: auto;
-}
-footer>p{
-color:white;
-}
-
-img{
-    width: 75%;
-     height: 350px;
-}
-
-#img{
-    display: flex;
-    flex-direction: column-reverse;
-    align-items:center;
-}
-body > main > div > form > div:nth-child(1){
-    flex-direction: column;
-}
-form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-body > main > div > form > div:nth-child(1){
-    width: 100%;
-    align-items: center;
-}
-body > main > div > form > div:nth-child(2){
-    width: 100%;
-    justify-content: center;
-}
-body > main > div > form > div:nth-child(2) > div.form-group{
-    width: 60%;
-}
-
-body > main > div > form > button{
-    margin-top: 10px;
-}
-.filtro{
-    display:none;
-}
-
-.conte{
-    position: absolute;
-    width: 100%;
-    z-index: 1;
-    height: 200px;
-    overflow-y: auto;
-}
-
-body > main > div > form > div:nth-child(1) > div:nth-child(1){
-    position: relative;
-}
-body > main > div > form > div:nth-child(1) > div:nth-child(2){
-position: relative;
-}
-@media only screen and (max-width: 660px) {
-
-    body > main > div > form > div:nth-child(2) > div.form-group{
-        width: 90%;
-        height: 10%;
+    color:black;
     }
+    main{
+        height: calc(100% - 160px);
+        margin: 0;
+    }
+    main>div>h2{
+        color: black;
+        text-align: center;
+    }
+
+    footer{
+        height: 75px;
+    }
+    header{
+        height: 75px;
+    }
+    #conte{
+        display: flex;
+        flex-direction: column;
+    align-items: center;
+    height: auto;
+    }
+    #conte > div.form-group{
+        width: 50%;
+    }
+    main>div{
+
+        margin: 0 auto;
+        margin-top: 10px;
+        width: 97%;
+        height: 97%;
+        background-color: rgba(255, 255, 255, 0.89);
+        border-radius: 5px;
+        overflow-x: auto;
+    }
+    footer>p{
+    color:white;
+    }
+
     img{
-        height: 180px;
+        width: 90%;
+         height: 450px;
     }
-        header{
-            height: 100px;
+
+    #img{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items:center;
+        margin-bottom: 10px;
+    }
+    body > main > div > form > div:nth-child(1){
+        flex-direction: column;
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    body > main > div > form > div:nth-child(1){
+        width: 100%;
+        align-items: center;
+    }
+    body > main > div > form > div:nth-child(2){
+        width: 100%;
+        justify-content: center;
+    }
+    body > main > div > form > div:nth-child(2) > div.form-group{
+        width: 60%;
+    }
+
+    body > main > div > form > button{
+        margin-top: 10px;
+    }
+    .filtro{
+        display:none;
+    }
+
+    .conte{
+        position: absolute;
+        width: 100%;
+        z-index: 1;
+        height: 200px;
+        overflow-y: auto;
+    }
+
+    body > main > div > form > div:nth-child(1) > div:nth-child(1){
+        position: relative;
+    }
+    body > main > div > form > div:nth-child(1) > div:nth-child(2){
+    position: relative;
+    }
+    #conte > div.col-md-3.mb-3{
+        width: 13%;
+    }
+    @media only screen and (max-width: 660px) {
+
+        body > main > div > form > div:nth-child(2) > div.form-group{
+            width: 90%;
+            height: 10%;
         }
-        footer{
-            height: 130px;
+        img{
+            height: 180px;
         }
-   }
+            header{
+                height: 100px;
+            }
+            footer{
+                height: 130px;
+            }
+            #conte{
+                height: 97%;
+            }
+            #conte>div{
+                height: 18%;
+
+            }
+            #conte > div.col-md-4.mb-3{
+                width: 70%;
+            }
+            #conte > div.col-md-3.mb-3{
+                width: 40%;
+            }
+            #conte > div.form-group{
+                width: 90%;
+            }
+       }
