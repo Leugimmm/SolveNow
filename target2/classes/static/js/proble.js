@@ -84,7 +84,7 @@ if (JSON.parse(localStorage.getItem('usuario1')) !== null) {
                    .then(response => response.json())
                    .then(data => {
                                     let conte = data;
-                                    console.log(conte);
+
                                     if(conte.solucionado=="1"){
 
 
@@ -134,7 +134,7 @@ if (JSON.parse(localStorage.getItem('usuario1')) !== null) {
 window.addEventListener("load", function (event)  {
  let url = window.location.toString();
   url = url.replace("?", "/");
-  console.log(url);
+
     let url4 = 'http://solucionaya.es/api/loca';
       let url3 = 'http://solucionaya.es/api/calle';
       let url2 = 'http://solucionaya.es/api/problema';
@@ -149,7 +149,7 @@ window.addEventListener("load", function (event)  {
      .then(response => response.json())
      .then(data => {
                       let conte = data;
-                      console.log(conte);
+
 
 
                           fetch(url2, {
@@ -161,7 +161,7 @@ window.addEventListener("load", function (event)  {
                               .then(response => response.json())
                               .then(data2 => {
                                   let pro;
-                                    console.log('2');
+
                                   for (let x = 0; x < data2.length; x++) {
                                       if (data2[x].id == conte.id_problema) {
                                           pro = data2[x].problema;
@@ -177,7 +177,7 @@ window.addEventListener("load", function (event)  {
                                   })
                                       .then(response => response.json())
                                       .then(data3 => {
-console.log('3');
+
                                           let ca;
                                           let loca;
 
@@ -246,13 +246,23 @@ let lu=document.getElementById('validationServer01');
 let img=document.getElementById('fotomostrar');
 let niv=document.getElementById('validationServer05');
 
-console.log(local);
+
 prob.textContent=pro;
 desc.textContent=conte.descripcion;
 img.src="./imagenes/"+conte.foto;
-lu.value=au+', '+local+', '+ca;
+lu.value=au+', '+local+', '+capitalizarCadaPalabra(ca);
 
 niv.value=conte.nivel;
 
 
+}
+function capitalizarCadaPalabra(str) {
+    // Convertir la cadena a minúsculas y dividirla en palabras
+    let palabras = str.toLowerCase().split(' ');
+    // Recorrer cada palabra y capitalizar la primera letra
+    for (let i = 0; i < palabras.length; i++) {
+        palabras[i] = palabras[i].charAt(0).toUpperCase() + palabras[i].slice(1);
+    }
+    // Unir las palabras nuevamente en una sola cadena
+    return palabras.join(' ');
 }

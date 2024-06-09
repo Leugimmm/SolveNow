@@ -411,7 +411,7 @@ function fil(){
                                 n: ni,
                                 s:sol3
                             }
-                            console.log(body);
+
                             fetch("http://solucionaya.es/explorar/filtro", {
                                 method: 'POST',
                                 body: JSON.stringify(body),
@@ -548,7 +548,7 @@ img.setAttribute('src',imgdata);
 
 p.textContent=pro;
 
-p2.textContent=au+', '+loca+', '+ca;
+p2.textContent=au+', '+loca+', '+capitalizarCadaPalabra(ca);
 
 padre.appendChild(div1);
 
@@ -559,6 +559,7 @@ div1.style.backgroundColor = 'yellow';
 }else if(conte.NIVEL==3){
 div1.style.backgroundColor = 'red';
 }
+
 
 div1.appendChild(div2);
 div2.appendChild(img);

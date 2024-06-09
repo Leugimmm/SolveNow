@@ -9,7 +9,13 @@ if (JSON.parse(localStorage.getItem('usuario1')) !== null) {
     // El localStorage existe, puedes realizar acciones adicionales aquí
     var valorAlmacenado = JSON.parse(localStorage.getItem('usuario1'));
     console.log('El valor almacenado es: ', valorAlmacenado);
+    let url = window.location.toString();
+    let paramValue = url.split('?').pop();
+    let numero = parseInt(paramValue, 10);
 
+if( !(valorAlmacenado.id==numero) ){
+  window.location.href = 'http://solucionaya.es/';
+  }
 
 } else {
              window.location.href = 'http://solucionaya.es/';
