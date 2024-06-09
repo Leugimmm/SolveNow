@@ -34,7 +34,7 @@ public class RegistroController {
         if (usuariosDTO.getNombre().matches("")){
             return false;
         }
-        if(!(usuariosService.findUsuario(usuariosDTO.getEmail(), usuariosDTO.getPassword()) == null)){
+        if(!(usuariosService.findUsuario(usuariosDTO.getEmail()) == null)){
             return false;
         }
         usuariosDTO.setRol("U");

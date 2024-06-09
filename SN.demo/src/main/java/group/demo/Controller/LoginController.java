@@ -28,7 +28,7 @@ public class LoginController {
         if (!usuariosDTO.getPassword().matches( "^(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{5,10})$")){
             return false;
         }
-        if(usuariosService.findUsuario(usuariosDTO.getEmail(), usuariosDTO.getPassword()) == null ){
+        if(usuariosService.findUsuario(usuariosDTO.getEmail()) == null ){
             return false;
         }
         return true;
@@ -36,6 +36,6 @@ public class LoginController {
 
     @PostMapping("/api/obtenerusuario")
     public UsuariosDTO obtenerusuario (@RequestBody UsuariosDTO usuariosDTO){
-        return usuariosService.findUsuario(usuariosDTO.getEmail(), usuariosDTO.getPassword());
+        return usuariosService.findUsuario(usuariosDTO.getEmail());
     }
 }

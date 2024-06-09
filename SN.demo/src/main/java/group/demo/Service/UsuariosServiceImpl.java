@@ -54,10 +54,10 @@ public class UsuariosServiceImpl implements UsuariosService{
         usuariosRepository.save(usuariosEntity);
     }
     @Override
-    public UsuariosDTO findUsuario( String correo ,  String password) {
+    public UsuariosDTO findUsuario( String correo ) {
 
         log.info("ClienteServiceImpl - findAll: Lista de todos los cliente");
-        UsuariosEntity usuariosEntity = usuariosRepository.findUsuario(correo, password);
+        UsuariosEntity usuariosEntity = usuariosRepository.findUsuario(correo);
         if (usuariosEntity == null )
             return null;
         UsuariosDTO usuariosDTO = UsuariosDTO.ConvertToDTO(usuariosEntity);

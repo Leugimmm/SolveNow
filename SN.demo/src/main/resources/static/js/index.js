@@ -199,7 +199,7 @@ img.setAttribute('src',imgdata);
 
 p.textContent=pro;
 
-p2.textContent=au+', '+loca+', '+ca;
+p2.textContent=au+', '+loca+', '+capitalizarCadaPalabra(ca);
 
 padre.appendChild(div1);
 if(conte.nivel==1){
@@ -208,6 +208,14 @@ div1.style.backgroundColor = 'green';
 div1.style.backgroundColor = 'yellow';
 }else if(conte.nivel==3){
 div1.style.backgroundColor = 'red';
+}
+if (JSON.parse(localStorage.getItem('usuario1')) !== null) {
+var valorAlmacenado2 = JSON.parse(localStorage.getItem('usuario1'));
+if(valorAlmacenado2.rol=='A' || valorAlmacenado2.rol=='AJ'){
+if(conte.solucionado==1){
+div1.style.backgroundColor = 'blue';
+}
+}
 }
 
 div1.appendChild(div2);
@@ -219,6 +227,16 @@ div2.appendChild(p2);
         });
 
 
+}
+function capitalizarCadaPalabra(str) {
+    // Convertir la cadena a minúsculas y dividirla en palabras
+    let palabras = str.toLowerCase().split(' ');
+    // Recorrer cada palabra y capitalizar la primera letra
+    for (let i = 0; i < palabras.length; i++) {
+        palabras[i] = palabras[i].charAt(0).toUpperCase() + palabras[i].slice(1);
+    }
+    // Unir las palabras nuevamente en una sola cadena
+    return palabras.join(' ');
 }
 
 

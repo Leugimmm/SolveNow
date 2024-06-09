@@ -548,7 +548,7 @@ img.setAttribute('src',imgdata);
 
 p.textContent=pro;
 
-p2.textContent=au+', '+loca+', '+ca;
+p2.textContent=au+', '+loca+', '+capitalizarCadaPalabra(ca);
 
 padre.appendChild(div1);
 
@@ -558,6 +558,14 @@ div1.style.backgroundColor = 'green';
 div1.style.backgroundColor = 'yellow';
 }else if(conte.NIVEL==3){
 div1.style.backgroundColor = 'red';
+}
+if (JSON.parse(localStorage.getItem('usuario1')) !== null) {
+var valorAlmacenado2 = JSON.parse(localStorage.getItem('usuario1'));
+if(valorAlmacenado2.rol=='A' || valorAlmacenado2.rol=='AJ'){
+if(conte.SOLUCIONADO==1){
+div1.style.backgroundColor = 'blue';
+}
+}
 }
 
 div1.appendChild(div2);

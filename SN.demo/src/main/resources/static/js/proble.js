@@ -250,9 +250,19 @@ console.log(local);
 prob.textContent=pro;
 desc.textContent=conte.descripcion;
 img.src="./imagenes/"+conte.foto;
-lu.value=au+', '+local+', '+ca;
+lu.value=au+', '+local+', '+capitalizarCadaPalabra(ca);
 
 niv.value=conte.nivel;
 
 
+}
+function capitalizarCadaPalabra(str) {
+    // Convertir la cadena a minúsculas y dividirla en palabras
+    let palabras = str.toLowerCase().split(' ');
+    // Recorrer cada palabra y capitalizar la primera letra
+    for (let i = 0; i < palabras.length; i++) {
+        palabras[i] = palabras[i].charAt(0).toUpperCase() + palabras[i].slice(1);
+    }
+    // Unir las palabras nuevamente en una sola cadena
+    return palabras.join(' ');
 }

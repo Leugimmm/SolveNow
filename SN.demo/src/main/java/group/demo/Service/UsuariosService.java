@@ -8,6 +8,6 @@ public interface UsuariosService {
     List<UsuariosDTO> findAll();
     UsuariosDTO findById(UsuariosDTO usuariosDTO);
     void save(UsuariosDTO usuariosDTO);
-    UsuariosDTO findUsuario( String correo ,  String password);
+    UsuariosDTO findUsuario( String correo );
     public void delete(UsuariosDTO usuariosDTO);
 }

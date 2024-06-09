@@ -9,9 +9,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 @Transactional
 public interface UsuarioRepository extends JpaRepository<UsuariosEntity, Integer> {
-    @Query(value = "SELECT * FROM usuarios WHERE EMAIL = :idc AND CONTRASEÑA = :idco",
+    @Query(value = "SELECT * FROM usuarios WHERE EMAIL = :idc",
             nativeQuery = true)
-    public UsuariosEntity findUsuario(@Param("idc") String correo, @Param("idco") String pass);
+    public UsuariosEntity findUsuario(@Param("idc") String correo);
 
 
 
