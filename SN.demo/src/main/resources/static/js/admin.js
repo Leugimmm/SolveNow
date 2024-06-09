@@ -9,12 +9,12 @@ sube.addEventListener('click', function () {
 window.location.href = "http://solucionaya.es/perfil?"+valorAlmacenado.id;
 });
 if(valorAlmacenado.rol=='U'){
-  window.location.href = 'http://localhost:8888';
+  window.location.href = 'http://solucionaya.es';
 
   }
 
 } else {
-             window.location.href = 'http://localhost:8888';
+             window.location.href = 'http://solucionaya.es';
     // El localStorage no existe o no tiene un valor para la clave 'miClave'
     console.log('El localStorage no tiene un valor para la clave "miClave".');
 }
