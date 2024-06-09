@@ -8,6 +8,10 @@ const sube = document.getElementById('per');
 sube.addEventListener('click', function () {
 window.location.href = "http://solucionaya.es/perfil?"+valorAlmacenado.id;
 });
+if(valorAlmacenado.rol=='U'){
+  window.location.href = 'http://localhost:8888';
+
+  }
 
 } else {
              window.location.href = 'http://localhost:8888';

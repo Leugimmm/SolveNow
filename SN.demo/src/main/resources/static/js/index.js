@@ -209,14 +209,7 @@ div1.style.backgroundColor = 'yellow';
 }else if(conte.nivel==3){
 div1.style.backgroundColor = 'red';
 }
-if (JSON.parse(localStorage.getItem('usuario1')) !== null) {
-var valorAlmacenado2 = JSON.parse(localStorage.getItem('usuario1'));
-if(valorAlmacenado2.rol=='A' || valorAlmacenado2.rol=='AJ'){
-if(conte.solucionado==1){
-div1.style.backgroundColor = 'blue';
-}
-}
-}
+
 
 div1.appendChild(div2);
 div2.appendChild(img);
